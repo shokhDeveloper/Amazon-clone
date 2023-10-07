@@ -1,0 +1,199 @@
+@use "../../Settings/scss/variebles.scss";
+.site-header{
+    width: 100%;
+    min-height: 60px;
+    background: #131921;
+    position: fixed;
+    top: 0;
+    z-index: 1111111;
+}
+.site-header-inner-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+.site-header .site-logo{
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;   
+}
+.site-header-search{
+    display: flex;
+    height: 35px;   
+    align-items: stretch;
+    flex: 1;    
+    border-radius: 5px;
+}
+.site-header-search *{
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+}
+.site-header-search .header-search-icon{
+    padding: 0 10px;
+    background: #cd9042;
+    font-size: 40px;
+    height: 100%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.header-search-input{
+    flex-basis: 100%;
+    border: none;
+}
+.site-nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.site-nav .site-nav-option{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    color: white;
+}
+.site-nav-option .site-option-small{
+    font-size: 10px;
+}
+.site-nav-option .site-option-title{
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;    
+}
+.site-nav .site-header-shoppingCart{
+    display: flex;
+    align-items: center;
+}
+.site-header-shoppingCart .site-shoppingCart-icon{
+    color: #fff;
+    font-size: 24px;
+    position: relative;
+}
+.site-header-shoppingCart .site-shopping-count{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    color: #cd9042;
+}
+.site-header-location{
+    text-align: center;
+    margin-right: 1rem;
+}
+.site-header-location *{
+    margin: 0;
+    padding: 0;
+}
+.site-header-location .text-title .header-location-icon{
+    filter: invert(1);
+    font-size: 15px;
+}
+.site-header-search .site-header-select{
+    width: 6%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 12px;
+    border-right: 1px solid rgb(186, 183, 183);
+    color: grey;
+    letter-spacing: 1px;
+}
+.site-header-select option{
+    color: #000 ;
+}
+.site-header div:not(:first-child){
+    border: 1px solid transparent;
+}
+.site-header div:not(:first-child):hover{
+    border: 1px solid #fff;
+}
+.site-nav-option:first-child{
+    border: 1px solid transparent;
+}
+.site-nav-option:first-child:hover{
+    border: 1px solid #fff;
+}
+.site-header .site-logo{
+    padding: 0.2rem;
+    border: 1px solid transparent;
+}
+.site-header .site-logo:hover{
+    border: 1px solid #fff;
+}
+.site-nav .site-header-shoppingCart{
+    border: 1px solid transparent !important;
+    padding: 0rem 0.5rem;
+    position: relative;
+}
+.site-header-shoppingCart .site-shopping-count{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(10px) translateY(-10px);
+}
+.site-nav .site-header-shoppingCart:hover{
+    border: 1px solid #fff !important; 
+}
+.site-languages{
+    margin: 0 1rem;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+}
+.site-languages span{
+    background-image: url("../../Settings/assets/images/America-Flag.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: left ;    
+    text-align: end;
+    padding: 0rem 3rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    
+}
+.site-languages:hover{
+    border: 1px solid #fff;
+}
+.site-header-search:hover{
+    border: 1px solid transparent !important;   
+}
+
+.site-header-search .site-header-select:focus{
+    outline: 4px solid #c78c3f;
+}
+.site-header-search{
+    outline: 4px solid transparent;
+    border: 1px solid transparent;
+    background: #c78c3f;
+}
+.site-header-search{
+    position: relative;
+}
+.search-todo-box{
+    position: absolute;
+    width:100% ;
+    top: 2rem;
+    justify-content: flex-end;
+}
+.search-todo-box .search-todo{
+    background: #fff;
+    width: 94.7%;
+}
+.search-todo-list{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+.search-todo-list .search-todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #a1a1a1;
+}
+.search-todo-item button{
+    font-size: 22px;
+}
+.search-todo-box:hover{
+    border: 1px solid transparent !important;
+}
