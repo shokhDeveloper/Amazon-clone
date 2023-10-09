@@ -1,28 +1,45 @@
-import { useEffect } from "react";
-import { useFetching } from "../../Settings";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setDeleteUser } from "../../Settings/redux/slice";
-import axios from "axios";
-
-export const SearchTodo = ({ active }) => {
-  let { searchData, searchValue } = useSelector(({ Reducer }) => Reducer);
+import { setBottomIndex, setDeleteUser, setSearchData, setSearchFilter } from "../../Settings/redux/slice";
+import { ApiRequests } from "../../Settings";
+export const SearchTodo = ({ active, focus }) => {
+  let { searchData, searchValue,  } = useSelector(({ Reducer }) => Reducer);
   const dispatch = useDispatch()
+  const {getSearchRequests, deleteSearchRequest} = ApiRequests
+  const handleGetUsers = useCallback(async () => {
+    if(!searchValue?.length){
+      const request = await getSearchRequests()
+      if(request?.status === 200){
+        const response = await request.data
+        dispatch(setSearchData(response))  
+      }
+    }
+  },[searchValue])
   useEffect(() => {
-    let rejex = new RegExp(searchValue, "gi");
-    searchData = searchData?.filter((item) => item.name.match(rejex));
-    console.log(searchData);
+    if(searchValue?.length){
+      let rejex = new RegExp(searchValue, "gi");
+      dispatch(setSearchFilter(rejex))
+    }else{
+      handleGetUsers() 
+    }
   }, [searchValue]);
-  const handleDelete = (id) => {
-    axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`).then(response => {
-        if(response.status === 200){
-            dispatch(setDeleteUser(id))
-        }
-    })
+  const handleDelete = async (id) => {
+    const request = await deleteSearchRequest(id)
+    if(request?.status === 200){
+      dispatch(setDeleteUser(id))
+    }
   }
+  useEffect(() => {
+    if(active && focus){
+      dispatch(setBottomIndex(false))
+    }else{
+      dispatch(setBottomIndex(true))
+    }
+  },[active, focus])
   return (
     <div
       className="search-todo-box"
-      style={{ display: active ? "flex" : "none" }}
+      style={{ display: active && focus ? "flex" : "none" }}
     >
       <div className="search-todo">
         <ul className="search-todo-list">

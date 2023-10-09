@@ -2,10 +2,11 @@
 .site-header{
     width: 100%;
     min-height: 60px;
+    z-index: 1111111;
     background: #131921;
     position: fixed;
     top: 0;
-    z-index: 1111111;
+    
 }
 .site-header-inner-box{
     display: flex;
@@ -139,7 +140,7 @@
     align-items: center;
     border: 1px solid transparent;
 }
-.site-languages span{
+.site-languages .site-default-language{
     background-image: url("../../Settings/assets/images/America-Flag.png");
     background-size: 40px;
     background-repeat: no-repeat;
@@ -196,4 +197,124 @@
 }
 .search-todo-box:hover{
     border: 1px solid transparent !important;
+}
+.site-nav{
+    position: relative;
+}
+.site-languages-box{
+    position: absolute;
+    top: 2.5rem;
+    background: #fff;
+    border-radius: 4px;
+}
+.site-languages-box .site-languages-discription-box *{
+    margin: 0; 
+    padding: 0.5rem ;
+}
+.site-languages-box .site-language-check-active, .site-languages-box .site-language-check{
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+.site-languages-discription-box .site-language-check-active{
+    border-bottom: 1px solid #8080804f !important;
+}
+.site-languages-discription-box .site-language-check-active input[type="radio"], .site-language-check input{
+    accent-color: rgb(170, 127, 46);    
+}
+.site-language-check-active .language-check,  .site-language-check .language-check{
+    font-size: 12px;
+}
+.site-language-check:not(:last-child){
+    margin: 0.5rem 0rem;
+}
+.site-language-check *  {
+    padding: 0 0.5rem;   
+}
+.site-language-currency *{
+    padding: 0 0.5rem;
+}
+.site-sign-box{
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    padding: 0.5rem;    
+    transform: translateX(-100px) ;
+    width: 450px;
+    border-radius: 5px;
+}
+.site-sign-box .site-sign-elements{
+    text-align: center;
+    border-bottom: 1px solid #a1a1a176;
+}
+.site-sign-elements .default-text{
+    color: #131921;
+}
+.site-sign-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.site-sign-inner .site-sign-item{
+    flex-basis: 50%;
+    color: #131921;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+
+}
+.site-sign-inner .site-sign-item:nth-child(1){
+    border-right: 1px solid #a1a1a1ab;
+}
+.site-sign-inner .site-sign-item:nth-child(2){
+    padding-left: 1rem;
+}
+.site-sign-item p{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem 0rem;   
+}
+.site-sign-item ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-sign-item ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+}
+.site-sign-item ul li a:hover{
+    color: #c78c3f;
+    text-decoration: underline;
+}
+.header-bottom{
+    background: #232f3e;   
+    margin-top: 3.7rem;
+}
+.header-bottom .header-bottom-links{
+    display: flex;
+    align-items: center;
+    list-style: none;    
+    margin: 0;
+    padding: 0rem 0.5rem;
+}
+.header-bottom .header-bottom-links li{
+    // margin-right: 1rem;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+}
+.header-bottom .header-bottom-links li:hover{
+    border: 1px solid #fff ;
+}
+.header-bottom-links li a{
+    color: #fff;
+    text-decoration: none;
+}
+.header-bottom-links li a .header-bottom-burger-icon{
+    color: #fff !important; 
+    margin-right: 0.5rem;
+    font-size: 20px; 
+    position: relative;
+    top: 0.2rem;
 }

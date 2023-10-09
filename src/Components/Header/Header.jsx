@@ -4,15 +4,19 @@ import {BsSearch} from "react-icons/bs"
 import {FiShoppingCart} from "react-icons/fi"
 import {GrLocation} from "react-icons/gr"
 import { useDispatch, useSelector } from "react-redux";
-import { setLocation, setSearchActive, setSearchValue } from "../../Settings/redux/slice";
+import { setLanguageBox, setLocation, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
 import { useEffect } from "react";
 import { SearchTodo } from "./SearchTodo";
+import { Link, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { changeLanguage } from "i18next";
+import { setItem } from "../../Settings";
+import { SignBox } from "./SignBox";
+import { HeaderBottom } from "./HeaderBottom";
 export const Header = () => {
-  const {currentApi, searchActive} = useSelector(({Reducer}) => Reducer)
+  const {currentApi, searchActive, searchFocus, languageBox, signBox} = useSelector(({Reducer}) => Reducer)
+  const {t, i18n:{language}} = useTranslation()
   const dispatch = useDispatch()
-  const handleLanguageOpen = () => {
-
-  };
   const handleLocation = () => {
     navigator.geolocation.getCurrentPosition((api) => {
       const {coords:{latitude, longitude}} = api
@@ -27,8 +31,22 @@ export const Header = () => {
       window.open(`https://www.google.com/maps/place/${currentApi?.latitude?.toString()?.substring(0,2)}%C2%B040'33.0%22N+66%C2%B057'20.7%22E/@${currentApi?.latitude?.toString()?.substring(0,5)}8291,${currentApi?.longitude?.toString().substring(0,4)}53167,17z/data=!3m1!4b1!4m4!3m3!8m2!3d${currentApi?.latitude}!4d${currentApi.longitude}?entry=ttu`, "blank")   
     }
   },[currentApi])
+  const handleMouse = () => {
+    dispatch(setLanguageBox(true))
+    dispatch(setSign(false))
+    dispatch(setSearchActive(true))
+  }
+  const handleOut = () => {
+    dispatch(setLanguageBox(false))
+    dispatch(setSearchActive(false))  
+  }
+  useEffect(() => {
+    console.log(language)
+  },[language])
   return (
+    <>
   <header className="site-header">
+
     <div className="container">
     <div className="site-header-inner-box">
     <img className="site-logo" onClick={() => window.location.reload()} src={Logo} alt="Amazon Logo" />
@@ -36,30 +54,76 @@ export const Header = () => {
       <span className="text-small">Deliver to</span>
       <p className="text-title"><GrLocation className="header-location-icon"/> Uzbekistan</p>
     </div>
-    <div className="site-header-search"  style={{outline: searchActive ? "4px solid #c78c3f": "4px solid transparent"}}>
+    <div className="site-header-search"  style={{outline: searchActive && searchFocus ? "4px solid #c78c3f": "4px solid transparent"}}>
       <select  defaultValue={"all"} className="site-header-select border-transparent" style={{zIndex: !searchActive ? "1": "0"}}>
         <option value="all">All</option>
         <option value="arts">Arts Crafts</option>
         <option value="automative">Automative</option>
         <option value="baby">Baby</option>      
       </select>
-      <input onChange={(event) => dispatch(setSearchValue(event.target.value))} className="header-search-input border-transparent" type="text" placeholder="Search Amazon" />
-      <SearchTodo active={searchActive}/>
+      <input onChange={(event) => dispatch(setSearchValue(event.target.value)) } onFocus={() => {
+        dispatch(setSearchFocus(true))
+        dispatch(setSearchActive(true))
+      }}  className="header-search-input border-transparent" type="text" placeholder="Search Amazon" />
+      <SearchTodo active={searchActive} focus={searchFocus}/>
       <BsSearch className="header-search-icon"/>
     </div>
     <nav className="site-nav">
-      <div className="site-languages">
-        <span>
-          EN 
+      <div className="site-languages" onMouseEnter={handleMouse} >
+        <span className="site-default-language">
+          {language.toUpperCase()}
         </span>
+        <div className="site-languages-box" style={{display: languageBox && searchActive ? "block": "none"}} onMouseLeave={handleOut}>
+            <div className="site-languages-discription-box">
+              <p className="default-text">Change languages <Link className="default-link" to={"/sign-in"}>Learn more</Link></p>
+              <div className="site-language-check-active">
+                <input type="radio" name="language" id="language" defaultChecked={language === "en" ? true: false} onChange={(event) => {
+                  changeLanguage(event.target.value)
+                  setItem("amazon-language", event.target.value)
+                }} value={"en"} />
+                <span className="language-check">English - EN</span>
+              </div>
+            </div>
+            <div className="site-languages-all">
+              <div className="site-language-check">
+                <input type="radio" name="language" id="language" defaultChecked={language === "de" ? true: false} onChange={(event) => {changeLanguage(event.target.value)
+                  setItem("amazon-language", event.target.value)
+                } } value={"de"} />
+                <span className="language-check">Deutch - DE</span>
+              </div>
+              <div className="site-language-check">
+                <input type="radio" name="language" id="language" value={"ru"} defaultChecked={language === "ru" ? true: false} onChange={(event) => {
+                  changeLanguage(event.target.value)
+                  setItem("amazon-language", event.target.value)
+                }}  />
+                <span className="language-check">Russia - RU</span>
+              </div>
+              <div className="site-language-check">
+                <input type="radio" name="language" id="language" value={"uz"} defaultChecked={language === "uz" ? true: false} onChange={(event) => {
+                  changeLanguage(event.target.value)
+                  setItem("amazon-language", event.target.value)
+                }}/>
+                <span className="language-check">Uzbek - UZ</span>
+              </div>
+           </div>
+            <div className="site-language-currency">
+              <p className="default-text">Change currency <Link className="default-link" to={"/sign-up"}>Learn mode</Link></p>
+              <p className="default-text">$ - {t("currency")}</p>
+          </div>
+        </div>
       </div>
-      <div className="site-nav-option">
+      <div className="site-nav-option" onMouseEnter={() => {dispatch(setSign(true))
+        dispatch(setSearchFocus(false))
+      }}>
         <span className="site-option-small">
-          Hello
+          {t("hello")}
         </span>
         <span className="site-option-title">
-          Sign in
+          {t("sign")}
         </span>
+        {signBox ? (
+          <SignBox/>
+        ): null}
       </div>
       <div className="site-nav-option">
         <span className="site-option-small">
@@ -68,6 +132,7 @@ export const Header = () => {
         <span className="site-option-title">
           & Orders
         </span>
+        
       </div>
       <div className="site-nav-option">
         <span className="site-option-small">
@@ -84,6 +149,8 @@ export const Header = () => {
     </nav>
     </div>
     </div>
-  </header>   
+  </header>
+  <HeaderBottom/>
+  </>   
   );
 };

@@ -1,13 +1,20 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Header } from "../Components"
 import { useLoader } from "../Settings"
+import { useEffect } from "react"
+import { setSearchActive, setSearchFocus } from "../Settings/redux/slice"
 
 export const Home = () => {    
-    const {searchActive} = useSelector(({Reducer}) => Reducer)
+    const {searchActive, searchFocus} = useSelector(({Reducer}) => Reducer)
+    const dispatch = useDispatch()
+    const handleMouseDown = (event) => {
+        dispatch(setSearchActive(false))
+        dispatch(setSearchFocus(false))
+    }
     return(
         <>
             <Header/>
-            <div className="active-search" style={{display: searchActive ? "block": "none"}}/>
+            <div className="active-search" style={{display: searchActive ? "block": "none"}} onMouseDown={handleMouseDown}/>
         </>
     )
 }

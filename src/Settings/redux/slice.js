@@ -8,9 +8,13 @@ const initialState = {
         latitude: null,
         longitude: null
     },
+    searchFocus: false,
     searchActive: false,
     searchValue: "",
-    searchData: []
+    searchData: [],
+    languageBox: false,
+    signBox: false,
+    bottomIndex: false
 }
 export const slice = createSlice({
     name: "uzum",
@@ -44,10 +48,25 @@ export const slice = createSlice({
         setSearchData(state, action){
             state.searchData = action.payload
         },
+        setSearchFocus(state, action){
+            state.searchFocus = action.payload
+        },
+        setSearchFilter(state, action){
+            state.searchData = state.searchData.filter(item => item.name.match(action.payload))
+        },
         setDeleteUser(state, action){
             state.searchData = state.searchData.filter(item => item.id !== action.payload)
+        },
+        setLanguageBox(state, action){
+            state.languageBox = action.payload
+        },
+        setSign(state, action){
+            state.signBox = action.payload
+        },
+        setBottomIndex(state, action){
+            state.bottomIndex = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex} = slice.actions
 export const Reducer = slice.reducer

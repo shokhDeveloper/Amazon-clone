@@ -39,3 +39,14 @@ input::placeholder{
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
 }
+.default-text{
+    font-size: 13px;
+}
+.default-link{
+    font-size: 11px;
+    text-decoration: none;
+    color: rgb(0, 120, 120);
+}
+body{
+    min-height: 100vh;
+}

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     *::before, *::after, *{
@@ -14,3 +14,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     
 ` 
+export const Button = styled.button`
+    padding: 0.5rem 1rem;
+    background: #FCD200;
+    color: black;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-family: "Ember-Text2";
+    min-width:200px;
+`
