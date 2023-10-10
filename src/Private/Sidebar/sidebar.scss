@@ -1,0 +1,102 @@
+.sidebar-overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999999999999999;
+    background: rgba(0,0, 0,0.7);
+}
+.parent .sidebar{
+    transform: translateX(-100%);
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    z-index:2;
+    width: 25%;
+}
+.parent .sidebar-inner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+ }
+.sidebar-inner .sidebar-close{
+    height: 100%;
+    padding-left: 0.5rem;
+}
+.sidebar-inner .sidebar-close button{
+    padding: 0;
+    font-size: 30px;
+    color: #fff;
+    background: transparent;
+    position: relative;
+    top: 0.7rem;
+}
+.sidebar{
+    transition: 0.3s ease all ;
+}
+.sidebar .sidebar-elements * {
+    margin: 0;
+    padding: 0;
+}
+.sidebar .sidebar-inner .sidebar-elements{
+    flex: 1;        
+    background: #fff;
+    height: 100%;
+
+}
+.sidebar-header{
+    width: 100%;
+    background: #232f3e;
+    padding: 0.8rem  !important;
+    text-align: start;
+}   
+.sidebar-header h4{
+    font-size: 20px;
+    color: #fff;
+}
+.sidebar-header-inner{
+    display: flex;
+    align-items: center;
+}
+.sidebar-header-inner::before{
+    content: " ";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0rem 1rem;
+    background-image: url("https://img.freepik.com/free-icon/user_318-159711.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.sidebar-inner .sidebar-routes{
+    // padding: 1rem;
+}
+.sidebar-route .sidebar-route-title-box{
+    padding: 1.5rem 2rem;
+    padding-bottom: 1rem;
+}
+.sidebar-route-title-box .sidebar-route-title{
+    font-size: 18px;
+    color:rgba(0, 0, 0, 0.955);
+}
+.sidebar-route .sidebar-route-box{
+    width: 100%;
+    padding: 0.5rem 2rem;
+    border: 1px solid red;
+
+}
+.sidebar-route-box a{
+    font-size: 0.9rem;
+    color: #232f3e;
+    text-decoration: none;
+}
+.sidebar-route-box{
+    background-image: url("https://toppng.com/uploads/preview/right-arrow-icon-11549436728z3gizxwjqt.png");
+    background-size: 0.8rem;
+    background-position: calc(90%) ;
+    background-repeat: no-repeat;
+    
+}

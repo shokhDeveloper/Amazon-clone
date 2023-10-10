@@ -16,7 +16,8 @@ const initialState = {
     signBox: false,
     bottomIndex: false,
     sidebar: false,
-    flag: getItem("language-flag") ? getItem("language-flag"): null
+    flag: getItem("language-flag") ? getItem("language-flag"): null,
+    sidebarActive: false
 }
 export const slice = createSlice({
     name: "uzum",
@@ -73,8 +74,11 @@ export const slice = createSlice({
         },
         setFlag(state, action){
             state.flag = action.payload
+        },
+        setSidebarActive(state, action){
+            state.sidebarActive = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive} = slice.actions
 export const Reducer = slice.reducer

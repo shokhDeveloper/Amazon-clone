@@ -5,7 +5,7 @@ const token = getItem("amazon-token")
 export const route = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/*" element={<Home/>}/>
         </>
     )
 )

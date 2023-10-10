@@ -7,7 +7,7 @@ import { setSearchActive, setSearchFocus } from "../Settings/redux/slice"
 import { Sidebar } from "./Sidebar";
 
 export const Home = () => {    
-    const {searchActive, searchFocus} = useSelector(({Reducer}) => Reducer)
+    const {searchActive, searchFocus, sidebar} = useSelector(({Reducer}) => Reducer)
     const dispatch = useDispatch()
     const handleMouseDown = (event) => {
         dispatch(setSearchActive(false))
@@ -18,7 +18,7 @@ export const Home = () => {
             <div className="parent">
             <div className="child">
             <Header/>
-            <div className="active-search" style={{display: searchActive ? "block": "none"}} onMouseDown={handleMouseDown}/>
+            <div className="active-search" style={{display: searchActive ? "block": "none"}}  onMouseDown={handleMouseDown}/>
             </div>
             <Sidebar/>
             </div>
