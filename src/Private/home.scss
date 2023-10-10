@@ -1,0 +1,14 @@
+.parent{
+    display: flex;
+}
+.parent .child:nth-child(1){
+    width: 100%;
+}
+.parent .sidebar{
+    transform: translateX(-100%);
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    z-index: 111111111111111;
+    background: red;
+}

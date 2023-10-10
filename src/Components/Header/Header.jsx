@@ -4,18 +4,21 @@ import {BsSearch} from "react-icons/bs"
 import {FiShoppingCart} from "react-icons/fi"
 import {GrLocation} from "react-icons/gr"
 import { useDispatch, useSelector } from "react-redux";
-import { setLanguageBox, setLocation, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
+import { setFlag, setLanguageBox, setLocation, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
 import { useEffect } from "react";
 import { SearchTodo } from "./SearchTodo";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "i18next";
 import { setItem } from "../../Settings";
 import { SignBox } from "./SignBox";
 import { HeaderBottom } from "./HeaderBottom";
+import { ApiRequests } from "../../Settings";
+import AmericaFlag from "../../Settings/assets/images/America-Flag.png";
 export const Header = () => {
-  const {currentApi, searchActive, searchFocus, languageBox, signBox} = useSelector(({Reducer}) => Reducer)
+  const {currentApi, searchActive, searchFocus, languageBox, signBox, flag} = useSelector(({Reducer}) => Reducer)
   const {t, i18n:{language}} = useTranslation()
+  const {getCountries} = ApiRequests
   const dispatch = useDispatch()
   const handleLocation = () => {
     navigator.geolocation.getCurrentPosition((api) => {
@@ -40,9 +43,18 @@ export const Header = () => {
     dispatch(setLanguageBox(false))
     dispatch(setSearchActive(false))  
   }
-  useEffect(() => {
-    console.log(language)
-  },[language])
+  const handleGetCountry = async (countrie) => {
+     try{
+      const request = await getCountries(countrie)
+      if(request?.status === 200){
+        const response = await request.data
+        dispatch(setFlag(response[response?.length > 1 ? 1: 0].flags.svg))
+        setItem("language-flag", response[response?.length > 1 ? 1: 0].flags.svg)
+      }
+     }catch(error){
+      return error
+     }
+  }
   return (
     <>
   <header className="site-header">
@@ -70,7 +82,7 @@ export const Header = () => {
     </div>
     <nav className="site-nav">
       <div className="site-languages" onMouseEnter={handleMouse} >
-        <span className="site-default-language">
+        <span className="site-default-language" style={{backgroundImage: `url(${flag && flag === "https://flagcdn.com/us.svg" ? AmericaFlag: flag})`}}>
           {language.toUpperCase()}
         </span>
         <div className="site-languages-box" style={{display: languageBox && searchActive ? "block": "none"}} onMouseLeave={handleOut}>
@@ -80,6 +92,7 @@ export const Header = () => {
                 <input type="radio" name="language" id="language" defaultChecked={language === "en" ? true: false} onChange={(event) => {
                   changeLanguage(event.target.value)
                   setItem("amazon-language", event.target.value)
+                  handleGetCountry(t("languageApi"))
                 }} value={"en"} />
                 <span className="language-check">English - EN</span>
               </div>
@@ -88,6 +101,8 @@ export const Header = () => {
               <div className="site-language-check">
                 <input type="radio" name="language" id="language" defaultChecked={language === "de" ? true: false} onChange={(event) => {changeLanguage(event.target.value)
                   setItem("amazon-language", event.target.value)
+                  handleGetCountry(t("languageApi"))
+
                 } } value={"de"} />
                 <span className="language-check">Deutch - DE</span>
               </div>
@@ -95,6 +110,8 @@ export const Header = () => {
                 <input type="radio" name="language" id="language" value={"ru"} defaultChecked={language === "ru" ? true: false} onChange={(event) => {
                   changeLanguage(event.target.value)
                   setItem("amazon-language", event.target.value)
+                  handleGetCountry(t("languageApi"))
+
                 }}  />
                 <span className="language-check">Russia - RU</span>
               </div>
@@ -102,6 +119,8 @@ export const Header = () => {
                 <input type="radio" name="language" id="language" value={"uz"} defaultChecked={language === "uz" ? true: false} onChange={(event) => {
                   changeLanguage(event.target.value)
                   setItem("amazon-language", event.target.value)
+                  handleGetCountry(t("languageApi"))
+
                 }}/>
                 <span className="language-check">Uzbek - UZ</span>
               </div>
@@ -154,3 +173,6 @@ export const Header = () => {
   </>   
   );
 };
+
+// vercel
+// netlify

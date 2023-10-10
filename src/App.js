@@ -18,7 +18,8 @@ i18n
           "language": "English",
           "currency": "USD - USD - Dollar",
           "hello": "Hello",
-          "sign": "Sign in"
+          "sign": "Sign in",
+          "languageApi": "America"
         },
       },
       de: {
@@ -27,7 +28,8 @@ i18n
           "language": "Deutch",
           "currency": "EU - EU - Euro",
           "hello": "Guten morgen",
-          "sign": "Eingeben"
+          "sign": "Eingeben",
+          "languageApi": "German"
         },
       },
       ru:{
@@ -36,7 +38,8 @@ i18n
           "language": "Russia",
           "currency": "RU - RU - Rubl",
           "hello": "Привет",
-          "sign": "Bxoд"
+          "sign": "Bxoд",
+          "languageApi": "Russia"
         },
       },
       uz: {
@@ -45,7 +48,8 @@ i18n
           "language": "Uzbek",
           "currency": "So'm - So'm - Uzbek so'm",
           "hello": "Salom",
-          "sign": "Kirish"
+          "sign": "Kirish",
+          "languageApi": "Uzbekistan"
         },
       }
     },
