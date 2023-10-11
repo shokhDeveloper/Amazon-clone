@@ -2,6 +2,9 @@ import "./sidebar.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  setNested,
+  setNestedBack,
+  setNestedType,
   setSearchActive,
   setSideBar,
   setSidebarActive,
@@ -9,9 +12,10 @@ import {
 import { useEffect } from "react";
 import { Route, Routes } from "react-router";
 import { SidebarDefaultRoutes } from "./SidebarDefaultRoutes";
+import { SidebarNested } from "./SidebarNested";
 
 export const Sidebar = () => {
-  const { sidebar, sidebarActive, token, user } = useSelector(
+  const { sidebar, sidebarActive, token, user, nestedType, nestedBack } = useSelector(
     ({ Reducer }) => Reducer
   );
   const dispatch = useDispatch();
@@ -27,6 +31,7 @@ export const Sidebar = () => {
       }, 500);
     }
   };
+  
   const handleMouseDown = (event) => {
     if (
       event.target.matches(".sidebar-overlay") ||
@@ -64,9 +69,14 @@ export const Sidebar = () => {
               </div>
             </div>
             <div className="sidebar-routes">
-              <Routes>
-                <Route index element={<SidebarDefaultRoutes />} />
-              </Routes>
+              <div className="sidebar-routes-box">
+                <div className={`sidebar-default ${nestedType ? "sidebar-defult-active": ""} `} >
+                  <SidebarDefaultRoutes />
+                </div>
+                <div className={`sidebar-nested ${nestedType ? "sidebar-nested-active": ""  }`} style={{transform: nestedBack ?"translateX(0px)": "translateX(100%)"}}>
+                  <SidebarNested/>
+                </div>
+              </div>
             </div>
           </div>
           <div className="sidebar-close">
