@@ -20,7 +20,8 @@ const initialState = {
     sidebarActive: false,
     nested: false,
     nestedType: null,
-    nestedBack: false
+    nestedBack: false,
+    sidebarSelected: false
 }
 export const slice = createSlice({
     name: "uzum",
@@ -89,8 +90,11 @@ export const slice = createSlice({
         },
         setNestedBack(state, action){
             state.nestedBack = action.payload
+        },
+        setSidebarSelected(state, action){
+            state.sidebarSelected = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected} = slice.actions
 export const Reducer = slice.reducer

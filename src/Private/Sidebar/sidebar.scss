@@ -157,3 +157,14 @@
     font-weight: 600;
     color: #000000f4;
 }
+.selected{
+    background-image: url("../../Settings/assets/images/arrow-bottom-3101.png");
+    background-size: 0.8rem;
+    background-position: calc(30%) ;
+    background-repeat: no-repeat;
+}
+.selected:hover{
+    background-size: 0.8rem !important  ;
+    background-position: calc(30%) !important;
+    background-image: url("../../Settings/assets/images/arrow-bottom-3101.png") !important;
+}
