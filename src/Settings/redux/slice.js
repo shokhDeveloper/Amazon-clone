@@ -21,7 +21,9 @@ const initialState = {
     nested: false,
     nestedType: null,
     nestedBack: false,
-    sidebarSelected: false
+    sidebarSelected: false,
+    heroImages: ["https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg", "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg", "https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg", "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"],
+    imageCount: 0,
 }
 export const slice = createSlice({
     name: "uzum",
@@ -93,8 +95,8 @@ export const slice = createSlice({
         },
         setSidebarSelected(state, action){
             state.sidebarSelected = action.payload
-        }
+        },
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, } = slice.actions
 export const Reducer = slice.reducer
