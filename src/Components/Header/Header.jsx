@@ -32,6 +32,7 @@ export const Header = () => {
   useEffect(() => {
     if(currentApi?.latitude){
       window.open(`https://www.google.com/maps/place/${currentApi?.latitude?.toString()?.substring(0,2)}%C2%B040'33.0%22N+66%C2%B057'20.7%22E/@${currentApi?.latitude?.toString()?.substring(0,5)}8291,${currentApi?.longitude?.toString().substring(0,4)}53167,17z/data=!3m1!4b1!4m4!3m3!8m2!3d${currentApi?.latitude}!4d${currentApi.longitude}?entry=ttu`, "blank")   
+      
     }
   },[currentApi])
   const handleMouse = () => {

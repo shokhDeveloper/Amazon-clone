@@ -22,7 +22,29 @@ const initialState = {
     nestedType: null,
     nestedBack: false,
     sidebarSelected: false,
-    heroImages: ["https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg", "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg", "https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg", "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"],
+    heroImages: [
+        {
+            url: "https://kitchen.com",
+            image: "https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
+        },
+        {
+            url: "https://bookshop.org/",
+            image: "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
+        },
+        {
+            url: "https://gshop.uz/category/2e-gaming-7?page=1&size=12",
+            image: "https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg"
+        },
+        {
+            url: "https://toys.com",
+            image: "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
+        }
+    ],
+    imgCount: 0,
+    heroBtnActive:{
+        leftBtn: false,
+        rightBtn: false
+    }   
 }
 export const slice = createSlice({
     name: "uzum",
@@ -95,7 +117,24 @@ export const slice = createSlice({
         setSidebarSelected(state, action){
             state.sidebarSelected = action.payload
         },
+        setImgCountInc(state, action){
+            if(state.imgCount < state.heroImages.length-1){
+                state.imgCount += action.payload
+            }else{
+                state.imgCount = 0
+            }
+        },
+        setImgCountDec(state, action){
+            if(state.imgCount > 0){
+                state.imgCount -= action.payload
+            }else{
+                state.imgCount = state.heroImages.length-1
+            }
+        },
+        setBtnActive(state, action){
+             state.heroBtnActive = action.payload
+        }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, } = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive} = slice.actions
 export const Reducer = slice.reducer

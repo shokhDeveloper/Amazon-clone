@@ -3,7 +3,7 @@ import { GlobalStyle, getItem, route, useFetching, useLoader } from "./Settings"
 import { Loader } from "./Components";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setBottomIndex, setSearchData } from "./Settings/redux/slice";
+import { setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next"
 
@@ -82,6 +82,15 @@ function App() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  },[])
+  const handleClick = (event) => {
+    if(!event.target.matches(".hero-btn")){
+      dispatch(setBtnActive({left: false, right: false}))
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("click", handleClick)
+    return () => window.removeEventListener("click", handleClick)
   },[])
   return (
     <>

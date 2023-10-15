@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     body{
         margin: 0;
         padding: 0;
+        background: #8080804f;
     }
     .border-transparent{
         border: 1px solid transparent;
