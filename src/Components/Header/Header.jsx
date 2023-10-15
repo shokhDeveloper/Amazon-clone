@@ -173,6 +173,3 @@ export const Header = () => {
   </>   
   );
 };
-
-// vercel
-// netlify

@@ -2,10 +2,6 @@ import "./sidebar.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setNested,
-  setNestedBack,
-  setNestedType,
-  setSearchActive,
   setSideBar,
   setSidebarActive,
 } from "../../Settings/redux/slice";
