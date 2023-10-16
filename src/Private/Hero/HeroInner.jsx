@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Naushnik from "../../Settings/assets/images/Klaviatura.jpg";
 import heroCardJson from "../../Settings/heroCard.json";
 import { useSelector } from "react-redux";
 export const HeroInner = () => { 

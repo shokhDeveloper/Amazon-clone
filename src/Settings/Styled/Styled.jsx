@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     body{
         margin: 0;
         padding: 0;
-        background: #8080804f;
+        background: #8080802b;
     }
     .border-transparent{
         border: 1px solid transparent;
@@ -17,10 +17,13 @@ export const GlobalStyle = createGlobalStyle`
 ` 
 export const Button = styled.button`
     padding: 0.5rem 1rem;
-    background: #FCD200;
+    background:${({type}) => type === "light" ? " transparent":  "#FCD200" };
     color: black;
     border-radius: 5px;
     letter-spacing: 1px;
     font-family: "Ember-Text2";
     min-width:200px;
+    &:hover{
+        background: ${({type}) => type === "light" ? "#e3e0e0": ""};
+    }
 `

@@ -44,7 +44,8 @@ const initialState = {
     heroBtnActive:{
         leftBtn: false,
         rightBtn: false
-    }   
+    },
+    signHelp: false   
 }
 export const slice = createSlice({
     name: "uzum",
@@ -133,8 +134,11 @@ export const slice = createSlice({
         },
         setBtnActive(state, action){
              state.heroBtnActive = action.payload
+        },
+        setSignHelp(state, action){
+            state.signHelp = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp} = slice.actions
 export const Reducer = slice.reducer

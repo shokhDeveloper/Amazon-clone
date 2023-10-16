@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFlag, setLanguageBox, setLocation, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
 import { useEffect } from "react";
 import { SearchTodo } from "./SearchTodo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "i18next";
 import { setItem } from "../../Settings";
@@ -17,6 +17,7 @@ import { ApiRequests } from "../../Settings";
 import AmericaFlag from "../../Settings/assets/images/America-Flag.png";
 export const Header = () => {
   const {currentApi, searchActive, searchFocus, languageBox, signBox, flag} = useSelector(({Reducer}) => Reducer)
+  const navigate = useNavigate()
   const {t, i18n:{language}} = useTranslation()
   const {getCountries} = ApiRequests
   const dispatch = useDispatch()
@@ -132,7 +133,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="site-nav-option" onMouseEnter={() => {dispatch(setSign(true))
+      <div className="site-nav-option" onClick={() => navigate("/login") } onMouseEnter={() => {dispatch(setSign(true))
         dispatch(setSearchFocus(false))
       }}>
         <span className="site-option-small">

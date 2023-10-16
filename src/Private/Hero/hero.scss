@@ -92,10 +92,22 @@
 }
 .link-active{
     font-size: 14px;
-    color: rgb(70, 140, 253);
+    color: #0066c0;
     text-decoration: none;
 }
 .link-active:hover{
     color: #c78c3f;
     text-decoration: underline;
+}
+.sign-form-help-box{
+    font-size: 14px;
+}
+.sign-form-help-box .sign-form-help-text{
+    font-size: 0.9em !important;
+    display: flex;
+    align-items: center;
+}
+.signform-help-icon{
+    margin-right: 0.3rem;
+    color: grey;
 }
