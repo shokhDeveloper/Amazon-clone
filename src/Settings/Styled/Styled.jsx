@@ -13,17 +13,20 @@ export const GlobalStyle = createGlobalStyle`
         border: 1px solid transparent;
         outline: 1px solid transparent;
     }
-    
+    .error-text{
+        color: crimson;
+    }
 ` 
 export const Button = styled.button`
     padding: 0.5rem 1rem;
-    background:${({type}) => type === "light" ? " transparent":  "#FCD200" };
+    background:${({styledtype}) => styledtype === "light" ? "transparent":  "#FCD200" };
     color: black;
     border-radius: 5px;
     letter-spacing: 1px;
     font-family: "Ember-Text2";
     min-width:200px;
+    border: ${({styledtype}) => styledtype === "light" ? "1px solid black": "1px solid transparent"};
     &:hover{
-        background: ${({type}) => type === "light" ? "#e3e0e0": ""};
+        background: ${({styledtype}) => styledtype === "light" ? "#e3e0e0": ""};
     }
 `

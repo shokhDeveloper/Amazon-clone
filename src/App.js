@@ -92,6 +92,7 @@ function App() {
     window.addEventListener("click", handleClick)
     return () => window.removeEventListener("click", handleClick)
   },[])
+
   return (
     <>
     {loader ? (

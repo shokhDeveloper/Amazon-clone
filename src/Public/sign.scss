@@ -1,68 +1,72 @@
-.login{
+.sign{
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
-.login-image-box{
+.sign-image-box{
     margin: 1rem 0rem;
     text-align: center;
 }
-.login-image-box img{
+.sign-image-box img{
     width: 100px;
     object-fit: contain;
 }
-.login-inner{
+.sign-inner{
     display: flex;
     justify-content: center;
 }
-.login-inner .login-inner-box{
+.sign-inner .sign-inner-box{
     min-width: 350px;
-    border: 1px solid rgba(58, 58, 58, 0.148);
+    border: 1px solid rgba(58, 58, 58, 0.148)   ;
     border-radius: 10px;
 }
-.login-inner-box{
+.sign-inner-box{
     padding: 2rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
-.login-inner-box .sign-form output h3{
+.sign-form output h3{
     font-size:25px;
     font-weight: 500;
     margin: 0;
     margin-bottom: 1rem;
 }
-.login-inner-box .sign-form label *{
+.sign-form label *{
     margin: 0.5rem 0rem;
 }
-.login-inner-box .sign-form label{
+ .sign-form label{
     display: block;
 }
-.login-inner-box .sign-form label:nth-child(3){
+.login .sign-inner-box .sign-form label:nth-child(3){
     margin-bottom: 1rem;
 }
-.login-inner-box .sign-form label input{
+.sign-form .form-input{
     width: 100%;
     padding: 0.5rem;
     border-radius: 5px ;
     outline: 2px solid transparent;
     border: 1px solid rgba(0, 0, 0, 0.282);
 }
-.login-inner-box .sign-form label p{
+.sign-form  .form-input::placeholder{
+    letter-spacing: 0px;
+}
+.sign-form label p{
     margin: 0;
 }
-.login-inner-box .sign-form button{
+.sign-form button{
     width: 100%;
     padding: 0.3rem;
 }
-.login-inner-box .sign-form button:hover{
+.sign-form .submitter-btn:hover{
     background: #e8c103;
 }
-.login-inner-box .sign-form label input:focus{
+.sign-form .form-input:focus{
     outline: 2px solid aqua;
     border: 1px solid black;
 }
-.login-inner-box .sign-form label p{
+.sign-form  p{
     font-weight: 700;
     letter-spacing: 0.5px;
     font-size: 13px;
@@ -80,10 +84,10 @@
 .sign-form-help-box .link-active{
     font-size: 12px !important;
 };
-.login .login-bottom{
+.sign .sign-bottom{
     max-width: 400px;
 }
-.login-create-line{
+.sign-create-line{
     margin: 0.5rem 0rem;
     display: flex;
     justify-content: center;
@@ -91,10 +95,10 @@
     color: #808080ab;
     width: 100%;
 }
-.login-create-line p{
+.sign-create-line p{
     font-size: 12px;
 }
-.login-create-line::before{
+.sign-create-line::before{
     content: " ";
     display: inlin-block;
     flex: 1;
@@ -103,7 +107,7 @@
     margin: 0px 10px;
     margin-left: 0px;
 }
-.login-create-line::after{
+.sign-create-line::after{
     content: " ";
     display: inlin-block;
     flex: 1;
@@ -112,8 +116,50 @@
     margin: 0px 10px;
     margin-right: 0px;
 }
-.login-bottom button{
+.sign-bottom button{
     width: 100%;
     border: 1px solid #80808067 ;
     font-size: 13px;
+}
+.sign-items{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    box-shadow: 0px 0px 5px 0px #80808067;
+}
+.sign-items-bottom{
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.sign-items-bottom .sign-items-bottom-box{
+    min-width: 280px;
+}
+.sign-items-bottom-box .sign-items-bottom-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sign-items-bottom-links a{
+    font-size: 12px;
+}
+.sign-items-bottom-box p{
+    color: rgba(0, 0, 0, 0.692);
+    font-size: 13px;
+    word-spacing: 2px;
+}
+.form-error-input{
+    outline: 2px solid crimson !important;
+    border: 1px solid black !important;   
+}
+.sign-form .sign-btns .google-btn{
+    background-image: url("../Settings/assets/images/Google.png");
+    background-position: calc(95%);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    border: 1px solid grey;
+    padding: 0.5rem;
+    text-transform: uppercase;
 }

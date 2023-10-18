@@ -1,6 +1,7 @@
 import "./header.scss";
 import Logo from "../../Settings/assets/images/logo.png";
 import {BsSearch} from "react-icons/bs"
+import {BiSolidUserCircle} from "react-icons/bi"
 import {FiShoppingCart} from "react-icons/fi"
 import {GrLocation} from "react-icons/gr"
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +17,7 @@ import { HeaderBottom } from "./HeaderBottom";
 import { ApiRequests } from "../../Settings";
 import AmericaFlag from "../../Settings/assets/images/America-Flag.png";
 export const Header = () => {
-  const {currentApi, searchActive, searchFocus, languageBox, signBox, flag} = useSelector(({Reducer}) => Reducer)
+  const {currentApi, searchActive, searchFocus, languageBox, signBox, flag, token, user} = useSelector(({Reducer}) => Reducer)
   const navigate = useNavigate()
   const {t, i18n:{language}} = useTranslation()
   const {getCountries} = ApiRequests
@@ -84,7 +85,7 @@ export const Header = () => {
     </div>
     <nav className="site-nav">
       <div className="site-languages" onMouseEnter={handleMouse} >
-        <span className="site-default-language" style={{backgroundImage: `url(${flag && flag === "https://flagcdn.com/us.svg" ? AmericaFlag: flag})`}}>
+        <span className="site-default-language" style={{backgroundImage: `url(${!flag ? AmericaFlag : flag === "https://flagcdn.com/us.svg" ? AmericaFlag: flag}`}}>
           {language.toUpperCase()}
         </span>
         <div className="site-languages-box" style={{display: languageBox && searchActive ? "block": "none"}} onMouseLeave={handleOut}>
@@ -133,7 +134,8 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="site-nav-option" onClick={() => navigate("/login") } onMouseEnter={() => {dispatch(setSign(true))
+      {!token ? (
+      <div className="site-nav-option" onClick={() => navigate("/sign") } onMouseEnter={() => {dispatch(setSign(true))
         dispatch(setSearchFocus(false))
       }}>
         <span className="site-option-small">
@@ -146,6 +148,11 @@ export const Header = () => {
           <SignBox/>
         ): null}
       </div>
+      ): (
+        <div className="site-nav-option user-option">
+          <span className="user-data"><BiSolidUserCircle/> {user.user_name.split(" ")[0][0].toUpperCase()}.{user.user_name.split(" ")[1][0].toUpperCase()}</span>
+        </div>
+      )}
       <div className="site-nav-option">
         <span className="site-option-small">
             Returns

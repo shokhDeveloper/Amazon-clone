@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getItem, removeItem, setItem } from "../Utils";
 const initialState = {
     token: getItem("amazon-token") ? getItem("amazon-token"): null,
-    user: getItem("amazon-user") ? JSON.parse("amazon-user"): null,
+    user: getItem("amazon-user") ? JSON.parse(getItem("amazon-user")): null,
     loader: window.localStorage.getItem("loader") ? false: true,
     currentApi:{
         latitude: null,
@@ -21,7 +21,7 @@ const initialState = {
     nested: false,
     nestedType: null,
     nestedBack: false,
-    sidebarSelected: false,
+    sidebarSelected: false, 
     heroImages: [
         {
             url: "https://kitchen.com",
@@ -45,7 +45,13 @@ const initialState = {
         leftBtn: false,
         rightBtn: false
     },
-    signHelp: false   
+    signHelp: false,
+    googleUser: {
+        user_name: null,
+        email: null,
+        password: null
+    },
+    modalGooglePassword: false
 }
 export const slice = createSlice({
     name: "uzum",
@@ -137,8 +143,17 @@ export const slice = createSlice({
         },
         setSignHelp(state, action){
             state.signHelp = action.payload
+        },
+        setGoogleUserNotPassword(state, action){
+            state.googleUser = action.payload
+        },
+        setGoogleUser(state, action){
+            state.googleUser = action.payload
+        },
+        setModalGooglePassword(state, action){
+            state.modalGooglePassword = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword} = slice.actions
 export const Reducer = slice.reducer

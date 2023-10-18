@@ -1,4 +1,3 @@
-import "./login.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button, useBack } from "../../Settings";
 import { useEffect } from "react";
@@ -6,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchActive, setSign, setSignHelp } from "../../Settings/redux/slice";
 import {ImPlay3}  from "react-icons/im"
 export const Login = () => {
+  const date = new Date()
   const {signHelp} = useSelector(({Reducer}) => Reducer)
   const navigate = useNavigate()
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    if (pathname === "/login") {
+    if (pathname === "/sign") {
       dispatch(setSign(false));
       dispatch(setSearchActive(false));
     }
@@ -26,8 +26,10 @@ export const Login = () => {
   useBack(true);
   return (
     <section className="login" onClick={handleClick}>
+      <div className="sign-items">
+
       <div className="container">
-        <div className="login-image-box">
+        <div className="sign-image-box">
           <img
             onClick={() => window.location.reload()}
             src={
@@ -36,8 +38,8 @@ export const Login = () => {
             alt="Amazon Logo"
           />
         </div>
-        <div className="login-inner">
-          <div className="login-inner-box">
+        <div className="sign-inner">
+          <div className="sign-inner-box">
             <form className="sign-form">
               <output>
                 <h3>Sign in</h3>
@@ -79,11 +81,24 @@ export const Login = () => {
             </div>
           </div>
         </div>
-        <div className="login-bottom">
-          <div className="login-create-line">
+        <div className="sign-bottom">
+          <div className="sign-create-line">
             <p>New Amazon ? </p>
           </div>
-          <Button onClick={() => navigate("/register") } className="border-transparent" type="light">Create your Amazon accaount  </Button>
+          <Button onClick={() => navigate("register") } className="border-transparent" type="light">Create your Amazon accaount  </Button>
+        </div>
+      </div>
+      </div>
+      <div className="sign-items-bottom">
+        <div className="container">
+           <div className="sign-items-bottom-box">
+               <div className="sign-items-bottom-links">
+                <Link className="card-link link-active" to={"register"}>Conditions of Use </Link>
+                <Link className="card-link link-active" to={"register"}>Privacy Notice</Link>
+                <Link className="card-link link-active" to={"register"}>Help</Link>
+                </div>   
+                  <p><small>&copy; 1996-{date.getFullYear()}, Amazo.com, Inc. or its affiliates</small></p>
+            </div>     
         </div>
       </div>
     </section>

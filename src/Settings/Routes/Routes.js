@@ -2,14 +2,21 @@ import { Route, createBrowserRouter, createRoutesFromElements } from "react-rout
 import { getItem } from "../Utils";
 import { Home } from "../../Private";
 import { Sign } from "../../Public/Sign";
-import { Register } from "../../Public";
+import { Login, Register } from "../../Public";
 const token = getItem("amazon-token")
 export const route = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/*" element={<Home/>}/>
-            <Route path="/login" element={<Sign/>}/>
-            <Route path="/register" element={<Register/>}/>
+            {!token ?  (
+                <Route path="/sign/*" element={<Sign/>}>
+                    <Route index element={<Login/>}/>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="register" element={<Register/>}/>
+                </Route>
+            ): (
+                ""
+            )}   
         </>
     )
 )
