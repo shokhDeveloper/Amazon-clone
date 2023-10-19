@@ -27,7 +27,8 @@ export const SignPassword = ({type}) => {
         axios.post(process.env.REACT_APP_SERVER + `/${type}`, data).then(response => {
             const {accessToken, user} = response.data
             if(type === "login" && response.status === 200 || response.status === 304){
-
+                dispatch(setToken(accessToken))
+                dispatch(setUser(user))
             }else if(type === "register" && response.status === 201){
                 dispatch(setToken(accessToken))
                 dispatch(setUser(user))
@@ -38,7 +39,6 @@ export const SignPassword = ({type}) => {
     })
     useEffect(() => {
         if(googleUser.password){
-            console.log("ishladi")
             ;(() => {
                 mutate(googleUser)
             })()

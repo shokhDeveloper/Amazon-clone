@@ -17,6 +17,7 @@ export const Hero = () => {
   }
   return (
     <section className="hero">
+      
       <div className="container">
         <div className="hero-inner">
           <div className="hero-image-box">
@@ -48,7 +49,7 @@ export const Hero = () => {
                 }}
               ></button>
             </div>
-            <HeroInner/>
+            < HeroInner/>
           </div>
         </div>
       </div>

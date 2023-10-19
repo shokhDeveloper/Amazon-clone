@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 export const HeroInner = () => { 
   const {token} = useSelector(({Reducer}) => Reducer)  
   return (
+    <>
+    <div className="hero-inner-cards-parent">
+
     <div className="hero-inner-cards">
       {heroCardJson.map((item) => {
         return (
@@ -26,17 +29,19 @@ export const HeroInner = () => {
                   });
                 }else {
                     return(
-                        <img src={item.image} width={300} height={270} alt="Amazon Image"/>
-                    )
-                }
-              })(item.active)}
+                      <img src={item.image} width={300} height={270} alt="Amazon Image"/>
+                      )
+                    }
+                  })(item.active)}
             </div>
             <div className="card-footer">
                 <Link className="card-link link-active" to={`${token ? "/see-more": "login"}`}>{item.discription}</Link>
             </div>
           </div>
         );
-      })}
+      })} 
     </div>
+    </div>
+</>
   );
 };

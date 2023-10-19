@@ -1,12 +1,48 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Button, useBack } from "../../Settings";
+import { Button, useBack, useLoader } from "../../Settings";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchActive, setSign, setSignHelp } from "../../Settings/redux/slice";
+import { setErrorTyping, setGoogleUserNotPassword, setModalGooglePasswordLogin, setSearchActive, setSign, setSignHelp, setToken, setUser } from "../../Settings/redux/slice";
 import {ImPlay3}  from "react-icons/im"
+import * as Yup from "yup";
+import {yupResolver} from "@hookform/resolvers/yup"
+import { Controller, useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import axios from "axios";
+import { ErrorTyping, Modal, SignPassword } from "../../Components";
+import { signInWithPopup } from "firebase/auth";
+import { GoogleProvider, auth } from "../../Settings/firebase/firebase.config";
 export const Login = () => {
   const date = new Date()
-  const {signHelp} = useSelector(({Reducer}) => Reducer)
+  const {signHelp, token, errorTyping, googleUser, modalGooglePasswordLogin} = useSelector(({Reducer}) => Reducer)
+  const {openLoader} = useLoader()
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().test(
+      "contact",
+      "Invalid Email or Phone number",
+      (value) => {
+        const emailRejex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        const phoneRejex = /^\d{12}$/;
+        if (!emailRejex.test(value) && !phoneRejex.test(value)) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    ),
+    password: Yup.string()
+      .min(3, "Min 3")
+      .max(12, "Max 12")
+      .required("Password its required !"),
+  });
+  const {register ,watch, control,  formState:{errors, isValid}, handleSubmit} = useForm({
+    values: {
+      email: "",
+      password: ""
+    },
+    mode: "all",
+    resolver: yupResolver(validationSchema)
+  })
   const navigate = useNavigate()
   const { pathname } = useLocation();
   const dispatch = useDispatch();
@@ -23,6 +59,46 @@ export const Login = () => {
       dispatch(setSignHelp(!signHelp))
     }
   }
+  const {mutate} = useMutation((data) => {
+    axios.post(process.env.REACT_APP_SERVER + "/login", {...data, date: `${date.toLocaleString()} Login At`}).then(response => {
+      if(response?.status === 200){
+        const {accessToken, user} = response.data
+        dispatch(setToken(accessToken))
+        dispatch(setUser(user))        
+      }
+    }).catch(error => {
+      if(error?.response?.status === 400){
+        dispatch(setErrorTyping(true))
+      }
+    })
+  })
+  const onSubmit = (userData) => {
+    mutate(userData)
+  }
+  const handleGoogle = () => {
+    signInWithPopup(auth, GoogleProvider).then(response => {
+      const { user:{displayName, email}} = response
+      const GoogleUser = {
+        user_name: displayName,
+        email,
+        password: null
+      }
+      dispatch(setGoogleUserNotPassword(GoogleUser))
+    })
+  }
+  useEffect(() => {
+    if(token){
+        openLoader()
+        navigate("/")
+        window.location.reload()
+    }
+    if(googleUser.user_name && !googleUser.password){
+      dispatch(setModalGooglePasswordLogin(true))
+    }
+
+  },[token, googleUser])
+  
+  watch()
   useBack(true);
   return (
     <section className="login" onClick={handleClick}>
@@ -40,19 +116,26 @@ export const Login = () => {
         </div>
         <div className="sign-inner">
           <div className="sign-inner-box">
-            <form className="sign-form">
+            <form onSubmit={handleSubmit(onSubmit)} className="sign-form">
               <output>
                 <h3>Sign in</h3>
-              </output>
+              </output> 
+              <ErrorTyping type={errorTyping}/>
               <label htmlFor="email">
-                <p>Email or mobile phone number</p>
-                <input type="email" name="email" id="email" />
+                <p className={`${errors?.email || errorTyping  ? "error-text": "" }`}>{errors?.email? errors?.email?.message: "Email or phone number"}</p>
+                <Controller name="email" control={control} render={({field}) => (
+                  <input className={`form-input ${errors?.email || errorTyping  ? "form-error-input": ""}`} {...field} type="text" id="email" name="email" placeholder="Email or number"></input>
+                )}></Controller>
+
               </label>
               <label htmlFor="password">
-                <p>Password</p>
-                <input type="password" name="password" id="password" />
+                <p className={`${errors?.password || errorTyping  ? "error-text": "" }`}>{errors?.password? errors?.password?.message : "Password"}</p>
+                <input {...register("password")} className={`form-input ${errors?.password || errorTyping ? "form-error-input": ""}`} type="password" name="password" id="password" />
               </label>
+              <div className="sign-btns">
               <Button className="border-transparent">Continue</Button>
+              <Button onClick={handleGoogle} className="border-transparent google-btn" type="button" styledtype="light">Google Authentication</Button>
+              </div>
             </form>
             <div className="sign-form-discription-box">
               <p className="sign-form-discription">
@@ -85,7 +168,7 @@ export const Login = () => {
           <div className="sign-create-line">
             <p>New Amazon ? </p>
           </div>
-          <Button onClick={() => navigate("register") } className="border-transparent" type="light">Create your Amazon accaount  </Button>
+          <Button styledtype="light" onClick={() => navigate("register") } className="border-transparent" type="light">Create your Amazon accaount  </Button>
         </div>
       </div>
       </div>
@@ -101,6 +184,9 @@ export const Login = () => {
             </div>     
         </div>
       </div>
+      <Modal modal={modalGooglePasswordLogin} setModal={setModalGooglePasswordLogin}>
+        <SignPassword type={"login"} />
+      </Modal>
     </section>
   );
 };

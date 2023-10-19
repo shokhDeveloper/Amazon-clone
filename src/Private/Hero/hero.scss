@@ -1,11 +1,13 @@
 .hero{
     width: 100%;
-    min-height:80vh;
+    min-height: 135vh;
+    position: relative !important;
+
 }
 .hero .hero-inner{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: relative !important   ;
 }
 .hero-image-box{
     display: flex;

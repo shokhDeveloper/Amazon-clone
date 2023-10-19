@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next"
-
+import BookJson from "./Settings/book.json";
 i18n
   .use(initReactI18next) 
   .init({

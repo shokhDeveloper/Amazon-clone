@@ -60,7 +60,7 @@ export const Sidebar = () => {
                 {!token ? (
                   <h4>Hello, sign in</h4>
                 ) : (
-                  <h4>Hello, {user?.name}</h4>
+                  <h4>Hello, {user?.user_name.split(" ").slice(0,1).join(" ")}</h4>
                 )}
               </div>
             </div>

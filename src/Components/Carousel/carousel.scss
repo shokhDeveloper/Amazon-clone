@@ -1,0 +1,49 @@
+.book-carousel{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+.carousel-inner{
+    margin: 1rem 0rem;
+    background: #fff;
+    padding: 1rem;
+}
+.carousel-inner .carousel-title-box h4{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1rem;
+    font-size: 25px;
+}
+.swiper-scrollbar-drag{
+    padding: 0.5rem;
+    background: rgba(128, 128, 128, 0.46) !important;
+}
+.carousel-inner .swiper-button-prev::after{
+    display: none;
+}
+.carousel-inner .swiper-button-next::after{
+    display: none;
+}
+.carousel-inner .swiper-button-prev{
+    width: 50px;
+    min-height: 80px;
+    background: #fff;
+    transform: translateY(-10px);
+    background-image: url("../../Settings/assets/images/arrow-icon-left.png");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.carousel-inner .swiper-button-next{
+    width: 50px;
+    min-height: 80px;
+    background: #fff;
+    transform: translateY(-10px);
+    background-image: url("../../Settings/assets/images/arrow-icon-right.png");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.book-carousel .swiper{
+    min-height: 230px;
+}

@@ -37,7 +37,7 @@ export const Register = () => {
   const validationSchema = Yup.object().shape({
     email: Yup.string().test(
       "contact",
-      "Notugri Qiymt kiritildi email yoki telefon raqam",
+      "Invalid Email or Phone number",
       (value) => {
         const emailRejex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         const phoneRejex = /^\d{12}$/;
@@ -109,7 +109,6 @@ export const Register = () => {
   }, [token]);
   useEffect(() => {
     if (googleUser.user_name && !googleUser.password) {
-      console.log("ishladi", googleUser);
       dispatch(setModalGooglePassword(true))
     }
   }, [googleUser]);
