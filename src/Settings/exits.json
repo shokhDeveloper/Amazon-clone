@@ -1,0 +1,105 @@
+{
+    "title": "See all deals",
+    "cards": [
+        {
+            "img": "https://m.media-amazon.com/images/I/61CphVVV8FL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51QCIPlxBmL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51APmh8eBYL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51O2TQF8++L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/41dBzeUBG5L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/41dBzeUBG5L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51VQuIIN3+L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/61CphVVV8FL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51QCIPlxBmL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51APmh8eBYL._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51O2TQF8++L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/41dBzeUBG5L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/41dBzeUBG5L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        },
+        {
+            "img": "https://m.media-amazon.com/images/I/51VQuIIN3+L._AC_SY200_.jpg",
+            "discount": "32% off",
+            "price": "$13.98",
+            "notPrice": "$19.9",
+            "discription": "Hard Is Not the Same Thing as ..."
+        }
+    ]
+}

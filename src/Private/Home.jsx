@@ -21,7 +21,8 @@ export const Home = () => {
         <div className="child">
           <Header />
           <Hero/>
-          <Carousel name="book-carousel"/>
+          <Carousel type={"exiting"} name="book-carousel" activeCarousel={true}/>
+          <Carousel type={"book"} name={"exiting-carousel"} activeCarousel={false}/>
           <div
             className="active-search"
             style={{ display: searchActive ? "block" : "none" }}
