@@ -10,7 +10,9 @@ import "swiper/css/scrollbar";
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export const Carousel = ({ name, type, activeCarousel }) => {
+  const {token} = useSelector(({Reducer}) => Reducer )
   const { carouselData, setCarouselData } = useContext(Context);
   useEffect(() => {
     console.log(carouselData);
@@ -20,8 +22,25 @@ export const Carousel = ({ name, type, activeCarousel }) => {
       return (
         arr.cards.map((item) => {
           return (
-            <SwiperSlide>
-              <img src={item.img} alt="" />
+            <SwiperSlide className="carousel-slide"> 
+              
+              <img className="slide-img" src={item.img} alt="" />
+             <div className="slide-active-text-box">
+              
+              <div className="slide-discount">
+                <div className="slide-discount-box">
+                  <span>{item.discount}</span>
+                  <span>Deal</span>
+                </div>
+              <div className="slide-price">
+                <p>{item.price}</p> <span>List Price {item.notPrice}</span>
+              </div>
+              <div className="slide-discription-box">
+                <p>{item.discription}</p>
+              </div>
+              </div>
+
+             </div>
             </SwiperSlide>
           )
         })
@@ -41,13 +60,13 @@ export const Carousel = ({ name, type, activeCarousel }) => {
       <>
         <h3>{text}</h3>
         {arr  &&  (
-          <Link>{arr.title}</Link>
+          <Link className="link-active" to={token ? "/settings": "/sign"}>{arr.title}</Link>
         )}
       </>
     )
   }
   return (
-    <section className={name}>
+    <section className={ `${name} carousel` }>
       <div className="container">
         <div className="carousel-inner">
           <div className="carousel-title-box">

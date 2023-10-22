@@ -2,10 +2,11 @@
 .site-header{
     width: 100%;
     min-height: 60px;
-    z-index: 1;
+    z-index: 111111;
     background: #131921;
     position: fixed;
     top: 0;
+
 }
 
 .site-header-inner-box{
@@ -335,9 +336,6 @@
 }
 .site-languages{
     margin-right: 0rem;
-}
-.sign-btns{
-    
 }
 .sign-btns  button{
     margin: 0.5rem 0rem;

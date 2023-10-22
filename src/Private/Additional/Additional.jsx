@@ -1,24 +1,26 @@
+import "./additional.scss";
 import { Link } from "react-router-dom";
-import heroCardJson from "../../Settings/heroCard.json";
+import AdditionalTovar from "../../Settings/additional.json";
 import { useSelector } from "react-redux";
-export const HeroInner = () => {
+export const Additional = () => {
   const { token } = useSelector(({ Reducer }) => Reducer);
   return (
-    <>
-      <div className="hero-inner-cards-parent">
-        <div className="hero-inner-cards">
-          {heroCardJson.map((item) => {
+    <section className="additional">
+      <div className="container">
+        <div className="additional-inner">
+          {AdditionalTovar?.map((item) => {
+            const { active, images } = item;
             return (
-              <div className="hero-card card">
+              <div className="card">
                 <div className="card-header">
                   <div className="card-title-box">
-                    <h3> {item.title} </h3>
+                    <h3>{item.title}</h3>
                   </div>
                 </div>
                 <div className="card-body card-body-active">
                   {(function (active) {
                     if (active) {
-                      return item.images?.map((item) => {
+                      return images.map((item) => {
                         return (
                           <div className="card-item">
                             <img
@@ -29,7 +31,7 @@ export const HeroInner = () => {
                             />
                             <Link
                               className="card-link"
-                              to={`${token ? "/see-more" : "login"}`}
+                              to={token ? "/see-more" : "login"}
                             >
                               {item.discription}
                             </Link>
@@ -38,15 +40,10 @@ export const HeroInner = () => {
                       });
                     } else {
                       return (
-                        <img
-                          src={item.image}
-                          width={300}
-                          height={270}
-                          alt="Amazon Image"
-                        />
+                        <img src={item.img} width={300} height={270} alt="" />
                       );
                     }
-                  })(item.active)}
+                  })(active)}
                 </div>
                 <div className="card-footer">
                   <Link
@@ -61,6 +58,6 @@ export const HeroInner = () => {
           })}
         </div>
       </div>
-    </>
+    </section>
   );
 };

@@ -1,0 +1,198 @@
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999999999999;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.parent .sidebar {
+  transform: translateX(-100%);
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  width: 25%;
+}
+
+.parent .sidebar-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sidebar-inner .sidebar-close {
+  height: 100%;
+  padding-left: 0.5rem;
+}
+
+.sidebar-inner .sidebar-close button {
+  padding: 0;
+  font-size: 30px;
+  color: #fff;
+  background: transparent;
+  position: relative;
+  top: 0.7rem;
+}
+
+.sidebar {
+  transition: 0.3s ease all;
+}
+
+.sidebar .sidebar-elements * {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .sidebar-inner .sidebar-elements {
+  flex: 1;
+  background: #fff;
+  height: 100%;
+}
+
+.sidebar-header {
+  width: 100%;
+  background: #232f3e;
+  padding: 0.8rem !important;
+  text-align: start;
+}
+
+.sidebar-header h4 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.sidebar-header-inner {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header-inner::before {
+  content: " ";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0rem 1rem;
+  background-image: url("https://img.freepik.com/free-icon/user_318-159711.jpg?w=2000");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar-route {
+  transition: 0.5s ease all;
+}
+
+.sidebar-route .sidebar-route-title-box {
+  padding: 1.5rem 2rem;
+  padding-bottom: 1rem;
+}
+
+.sidebar-route-title-box .sidebar-route-title {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.955);
+}
+
+.sidebar-route .sidebar-route-box {
+  padding: 0.8rem 2rem;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-route-box p {
+  font-size: 0.9rem;
+  color: #232f3e;
+  text-decoration: none;
+}
+
+.sidebar-route-box {
+  background-image: url("https://toppng.com/uploads/preview/right-arrow-icon-11549436728z3gizxwjqt.png");
+  background-size: 0.8rem;
+  background-position: 90%;
+  background-repeat: no-repeat;
+}
+
+.sidebar .sidebar-route .sidebar-route-box:hover {
+  background: rgba(128, 128, 128, 0.2392156863);
+  background-image: url("https://tmpfiles.nohat.cc/full-m2H7i8A0A0G6i8Z5.png");
+  background-size: 0.4rem;
+  background-position: 89%;
+  background-repeat: no-repeat;
+}
+
+.sidebar-routes {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  transition: 0.5s ease all;
+}
+
+.sidebar-nested-route {
+  height: 100vh;
+  overflow: scroll;
+  transition: 0.5s ease all;
+}
+
+.sidebar-routes-box {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-default {
+  flex-basis: 100%;
+  min-height: 100vh;
+}
+
+.sidebar-nested {
+  display: none;
+  transition: 0.5s ease all;
+  opacity: 0;
+  transform: translateX(100%);
+  min-height: 100vh;
+}
+
+.sidebar-defult-active {
+  opacity: 0;
+  display: none;
+}
+
+.sidebar-nested-active {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transform: translateX(0%);
+}
+
+.sidebar-back {
+  padding: 1rem 3.5rem !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.525);
+  background-image: url("../../Settings/assets/images/left-arrow.png");
+  background-size: 16px;
+  background-position: 10%;
+  background-repeat: no-repeat;
+}
+
+.sidebar-back button {
+  background: transparent;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9568627451);
+}
+
+.selected {
+  background-image: url("../../Settings/assets/images/arrow-bottom-3101.png");
+  background-size: 0.8rem;
+  background-position: 30%;
+  background-repeat: no-repeat;
+}
+
+.selected:hover {
+  background-size: 0.8rem !important;
+  background-position: 30% !important;
+  background-image: url("../../Settings/assets/images/arrow-bottom-3101.png") !important;
+}/*# sourceMappingURL=sidebar.css.map */

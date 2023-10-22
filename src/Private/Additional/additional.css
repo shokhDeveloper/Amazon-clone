@@ -1,0 +1,4 @@
+.additional-inner {
+  display: grid;
+  grid-template: repeat(1, auto)/repeat(4, 25%);
+}/*# sourceMappingURL=additional.css.map */

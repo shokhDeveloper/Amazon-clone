@@ -4,6 +4,7 @@ import { Carousel, Header } from "../Components";
 import { setSearchActive, setSearchFocus } from "../Settings/redux/slice";
 import { Sidebar } from "./Sidebar";
 import { Hero } from "./Hero";
+import { Additional } from "./Additional";
 
 export const Home = () => {
   const { searchActive } = useSelector(
@@ -21,8 +22,9 @@ export const Home = () => {
         <div className="child">
           <Header />
           <Hero/>
-          <Carousel type={"exiting"} name="book-carousel" activeCarousel={true}/>
-          <Carousel type={"book"} name={"exiting-carousel"} activeCarousel={false}/>
+          <Carousel type={"exiting"} name={"exiting-carousel"}  activeCarousel={true}/>
+          <Carousel type={"book"} name="book-carousel"  activeCarousel={false}/>
+          <Additional/>
           <div
             className="active-search"
             style={{ display: searchActive ? "block" : "none" }}

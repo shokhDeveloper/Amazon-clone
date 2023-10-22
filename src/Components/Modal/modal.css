@@ -1,0 +1,47 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-overlay .modal {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.modal-header {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-header button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 25px;
+  padding: 0;
+  background: #FCD200;
+  padding: 0 0.3rem;
+}
+
+.modal-header img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.modal-body {
+  padding: 0rem 2rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.modal-body .sign-form output h3 {
+  margin: 1rem 0rem;
+}/*# sourceMappingURL=modal.css.map */

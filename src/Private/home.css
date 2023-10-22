@@ -1,0 +1,7 @@
+.parent {
+  display: flex;
+}
+
+.parent .child:nth-child(1) {
+  width: 100%;
+}/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,205 @@
+.sign {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sign-image-box {
+  margin: 1rem 0rem;
+  text-align: center;
+}
+
+.sign-image-box img {
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.sign-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-inner .sign-inner-box {
+  min-width: 350px;
+  border: 1px solid rgba(58, 58, 58, 0.148);
+  border-radius: 10px;
+}
+
+.sign-inner-box {
+  padding: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.sign-form output h3 {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.sign-form label * {
+  margin: 0.5rem 0rem;
+}
+
+.sign-form label {
+  display: block;
+}
+
+.login .sign-inner-box .sign-form label:nth-child(3) {
+  margin-bottom: 1rem;
+}
+
+.sign-form .form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: 2px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.282);
+}
+
+.sign-form .form-input::-moz-placeholder {
+  letter-spacing: 0px;
+}
+
+.sign-form .form-input::placeholder {
+  letter-spacing: 0px;
+}
+
+.sign-form label p {
+  margin: 0;
+}
+
+.sign-form button {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.sign-form .submitter-btn:hover {
+  background: #e8c103;
+}
+
+.sign-form .form-input:focus {
+  outline: 2px solid aqua;
+  border: 1px solid black;
+}
+
+.sign-form p {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+.sign-form-discription-box {
+  max-width: 340px;
+}
+
+.sign-form-discription-box .sign-form-discription {
+  line-height: 20px;
+  font-size: 14px !important;
+}
+
+.sign-form-discription-box .sign-form-discription a {
+  font-size: 1em;
+}
+
+.sign-form-help-box .link-active {
+  font-size: 12px !important;
+}
+
+.sign .sign-bottom {
+  max-width: 400px;
+}
+
+.sign-create-line {
+  margin: 0.5rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(128, 128, 128, 0.6705882353);
+  width: 100%;
+}
+
+.sign-create-line p {
+  font-size: 12px;
+}
+
+.sign-create-line::before {
+  content: " ";
+  display: inlin-block;
+  flex: 1;
+  height: 1px;
+  background: rgba(128, 128, 128, 0.6705882353);
+  margin: 0px 10px;
+  margin-left: 0px;
+}
+
+.sign-create-line::after {
+  content: " ";
+  display: inlin-block;
+  flex: 1;
+  height: 1px;
+  background: rgba(128, 128, 128, 0.6705882353);
+  margin: 0px 10px;
+  margin-right: 0px;
+}
+
+.sign-bottom button {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.4039215686);
+  font-size: 13px;
+}
+
+.sign-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  box-shadow: 0px 0px 5px 0px rgba(128, 128, 128, 0.4039215686);
+}
+
+.sign-items-bottom {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-items-bottom .sign-items-bottom-box {
+  min-width: 280px;
+}
+
+.sign-items-bottom-box .sign-items-bottom-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-items-bottom-links a {
+  font-size: 12px;
+}
+
+.sign-items-bottom-box p {
+  color: rgba(0, 0, 0, 0.692);
+  font-size: 13px;
+  word-spacing: 2px;
+}
+
+.form-error-input {
+  outline: 2px solid crimson !important;
+  border: 1px solid black !important;
+  color: crimson !important;
+}
+
+.sign-form .sign-btns .google-btn {
+  background-image: url("../Settings/assets/images/Google.png");
+  background-position: 95%;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  border: 1px solid grey;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}/*# sourceMappingURL=sign.css.map */
