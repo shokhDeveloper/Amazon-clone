@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
     *::before, *::after, *{
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
     body{
         margin: 0;

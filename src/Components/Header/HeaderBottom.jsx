@@ -9,7 +9,7 @@ export const HeaderBottom = () => {
       dispatch(setSideBar(true))
     }
     return(
-        <div className="header-bottom">
+        <div className="header-bottom" id="swiper">
             <div className="container">
               <ul className="header-bottom-links" >
                   <li className="header-bottom-item" onClick={handleClick} style={{zIndex: bottomIndex ? "1111111111": "0" }}>

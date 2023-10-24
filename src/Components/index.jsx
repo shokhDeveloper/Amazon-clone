@@ -5,3 +5,5 @@ export * from "./SignPassword";
 export * from "./ErrorTyping";
 export * from "./Carousel";
 export * from "./Context";
+export * from "./RenderCard";
+export * from "./BackTop";

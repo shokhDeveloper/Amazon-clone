@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next"
-import BookJson from "./Settings/book.json";
 i18n
   .use(initReactI18next) 
   .init({
@@ -19,7 +18,8 @@ i18n
           "currency": "USD - USD - Dollar",
           "hello": "Hello",
           "sign": "Sign in",
-          "languageApi": "America"
+          "languageApi": "America",
+          "valyuta": "USD - U.S Dollar"
         },
       },
       de: {
@@ -29,7 +29,8 @@ i18n
           "currency": "EU - EU - Euro",
           "hello": "Guten morgen",
           "sign": "Eingeben",
-          "languageApi": "German"
+          "languageApi": "German",
+          "valyuta": "Euro  "
         },
       },
       ru:{
@@ -39,7 +40,8 @@ i18n
           "currency": "RU - RU - Rubl",
           "hello": "Привет",
           "sign": "Bxoд",
-          "languageApi": "Russia"
+          "languageApi": "Russia",
+          "valyuta": "Rubl"
         },
       },
       uz: {
@@ -49,7 +51,8 @@ i18n
           "currency": "So'm - So'm - Uzbek so'm",
           "hello": "Salom",
           "sign": "Kirish",
-          "languageApi": "Uzbekistan"
+          "languageApi": "Uzbekistan",
+          "valyuta": "So'm"
         },
       }
     },

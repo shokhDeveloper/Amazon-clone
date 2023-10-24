@@ -1,0 +1,76 @@
+.back-top{
+    margin-top: 4rem;
+    background: #232F3E;
+}
+.backtop-btn{
+    width: 100% ;
+    height: auto;
+    display: inline-block;
+    padding: 1rem 0rem;
+    background: #37475A;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.backtop-inner{
+    margin-top: 2rem;
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(4, 20%);
+    justify-content: center;   
+}
+.backtop-inner .backtop-item .backtop-item-title{
+    font-size: 17px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.backtop-inner .backtop-item .backtop-item-list{
+    list-style: none;
+    padding: 0;
+}
+.backtop-item .backtop-item-list li{
+    padding: 0.3rem 0rem;
+}
+.backtop-item .backtop-item-list li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+.backtop-item .backtop-item-list li a:hover{
+    text-decoration: underline;
+}
+.backtop-bottom{
+    width: 100%;
+    height: auto;
+}
+.backtop-bottom .backtop-bottom-inner{
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(4, 10%);
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+    grid-column-gap: 20px;
+}
+.backtop-bottom-inner div img{
+    object-fit: contain;
+}
+.backtop-bottom-btn{
+    border: 1px solid #848688;
+    padding: 0.5rem;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 3px;
+}
+.backtop-bottom-btn:nth-child(1){
+    background-image: url("../../Settings/assets/images/BrowserLight.png");
+    background-size: 1.3rem;
+    background-position: calc(10%);
+    background-repeat: no-repeat;
+}
+.backtop-bottom-btn p {
+    margin: 0;
+    padding: 0;
+}
