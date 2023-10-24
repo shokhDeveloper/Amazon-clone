@@ -16,6 +16,7 @@ import { SignBox } from "./SignBox";
 import { HeaderBottom } from "./HeaderBottom";
 import { ApiRequests } from "../../Settings";
 import AmericaFlag from "../../Settings/assets/images/America-Flag.png";
+import { LanguageBox } from "../LanguageBox";
 export const Header = () => {
   const {currentApi, searchActive, searchFocus, languageBox, signBox, flag, token, user} = useSelector(({Reducer}) => Reducer)
   const navigate = useNavigate()
@@ -46,18 +47,7 @@ export const Header = () => {
     dispatch(setLanguageBox(false))
     dispatch(setSearchActive(false))  
   }
-  const handleGetCountry = async (countrie) => {
-     try{
-      const request = await getCountries(countrie)
-      if(request?.status === 200){
-        const response = await request.data
-        dispatch(setFlag(response[response?.length > 1 ? 1: 0].flags.svg))
-        setItem("language-flag", response[response?.length > 1 ? 1: 0].flags.svg)
-      }
-     }catch(error){
-      return error
-     }
-  }
+  
   return (
     <>
   <header className="site-header">
@@ -88,51 +78,7 @@ export const Header = () => {
         <span className="site-default-language" style={{backgroundImage: `url(${!flag ? AmericaFlag : flag === "https://flagcdn.com/us.svg" ? AmericaFlag: flag}`}}>
           {language.toUpperCase()}
         </span>
-        <div className="site-languages-box" style={{display: languageBox && searchActive ? "block": "none"}} onMouseLeave={handleOut}>
-            <div className="site-languages-discription-box">
-              <p className="default-text">Change languages <Link className="default-link" to={"/sign-in"}>Learn more</Link></p>
-              <div className="site-language-check-active">
-                <input type="radio" name="language" id="language" defaultChecked={language === "en" ? true: false} onChange={(event) => {
-                  changeLanguage(event.target.value)
-                  setItem("amazon-language", event.target.value)
-                  handleGetCountry(t("languageApi"))
-                }} value={"en"} />
-                <span className="language-check">English - EN</span>
-              </div>
-            </div>
-            <div className="site-languages-all">
-              <div className="site-language-check">
-                <input type="radio" name="language" id="language" defaultChecked={language === "de" ? true: false} onChange={(event) => {changeLanguage(event.target.value)
-                  setItem("amazon-language", event.target.value)
-                  handleGetCountry(t("languageApi"))
-
-                } } value={"de"} />
-                <span className="language-check">Deutch - DE</span>
-              </div>
-              <div className="site-language-check">
-                <input type="radio" name="language" id="language" value={"ru"} defaultChecked={language === "ru" ? true: false} onChange={(event) => {
-                  changeLanguage(event.target.value)
-                  setItem("amazon-language", event.target.value)
-                  handleGetCountry(t("languageApi"))
-
-                }}  />
-                <span className="language-check">Russia - RU</span>
-              </div>
-              <div className="site-language-check">
-                <input type="radio" name="language" id="language" value={"uz"} defaultChecked={language === "uz" ? true: false} onChange={(event) => {
-                  changeLanguage(event.target.value)
-                  setItem("amazon-language", event.target.value)
-                  handleGetCountry(t("languageApi"))
-
-                }}/>
-                <span className="language-check">Uzbek - UZ</span>
-              </div>
-           </div>
-            <div className="site-language-currency">
-              <p className="default-text">Change currency <Link className="default-link" to={"/sign-up"}>Learn mode</Link></p>
-              <p className="default-text">$ - {t("currency")}</p>
-          </div>
-        </div>
+        <LanguageBox type={"headerLanguage"} languageBox={languageBox} setLanguageBox={setLanguageBox}/>
       </div>
       {!token ? (
       <div className="site-nav-option" onClick={() => navigate("/sign") } onMouseEnter={() => {dispatch(setSign(true))

@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router";
 import { GlobalStyle, getItem, route, useFetching, useLoader } from "./Settings";
-import { Loader } from "./Components";
-import { useEffect } from "react";
+import { Context, Loader } from "./Components";
+import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
@@ -19,7 +19,8 @@ i18n
           "hello": "Hello",
           "sign": "Sign in",
           "languageApi": "America",
-          "valyuta": "USD - U.S Dollar"
+          "valyuta": "USD - U.S Dollar",
+          "region": "United States"
         },
       },
       de: {
@@ -30,7 +31,8 @@ i18n
           "hello": "Guten morgen",
           "sign": "Eingeben",
           "languageApi": "German",
-          "valyuta": "Euro  "
+          "valyuta": "Euro  ",
+          "region": "Germain"
         },
       },
       ru:{
@@ -41,7 +43,8 @@ i18n
           "hello": "Привет",
           "sign": "Bxoд",
           "languageApi": "Russia",
-          "valyuta": "Rubl"
+          "valyuta": "Rubl",
+          "region": "Russia"
         },
       },
       uz: {
@@ -52,7 +55,8 @@ i18n
           "hello": "Salom",
           "sign": "Kirish",
           "languageApi": "Uzbekistan",
-          "valyuta": "So'm"
+          "valyuta": "So'm",
+          "region": "Uzbekistan" 
         },
       }
     },
@@ -60,6 +64,7 @@ i18n
     fallbackLng: getItem("amazon-language") ? getItem("amazon-language") : "en", 
   });
 function App() {
+  const {setLimit, setPage, page} = useContext(Context)
   const {openLoader} = useLoader()
   const {data} = useFetching("https://jsonplaceholder.typicode.com/users")
   const {loader} = useSelector(({Reducer}) => Reducer )
@@ -80,6 +85,13 @@ function App() {
       dispatch(setBottomIndex(false))
     }else{
       dispatch(setBottomIndex(true))
+    }
+    if(Math.ceil((window.innerHeight + window.scrollY)) >= document.body.offsetHeight){
+      if(page < 3){
+        setPage(page + 1)
+      }else{
+        setPage(2)
+      }
     }
   }
   useEffect(() => {

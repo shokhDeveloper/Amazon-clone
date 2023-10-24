@@ -54,7 +54,11 @@ const initialState = {
     modalGooglePassword: false,
     errorTypingText: "You entered information that does not exist on the server",
     errorTyping: false,
-    modalGooglePasswordLogin: false
+    modalGooglePasswordLogin: false,
+    backTopLanguageBox: false,
+    tovars: [],
+    korzina: [],
+
 }
 export const slice = createSlice({
     name: "uzum",
@@ -161,8 +165,17 @@ export const slice = createSlice({
         },
         setModalGooglePasswordLogin(state, action){
             state.modalGooglePasswordLogin = action.payload
+        },
+        setBackTopLanguageBox(state, action){
+            state.backTopLanguageBox = action.payload
+        },
+        setTovars(state, action){
+            state.tovars = action.payload
+        },
+        setKorzina(state, action){
+            state.korzina = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars} = slice.actions
 export const Reducer = slice.reducer

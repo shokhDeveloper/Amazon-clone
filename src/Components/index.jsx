@@ -7,3 +7,4 @@ export * from "./Carousel";
 export * from "./Context";
 export * from "./RenderCard";
 export * from "./BackTop";
+export * from "./Footer";

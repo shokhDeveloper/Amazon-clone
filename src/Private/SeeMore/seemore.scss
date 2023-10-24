@@ -1,0 +1,30 @@
+body{
+    height: 100vh;
+}
+.seemore{
+    margin-top: 2rem;
+}
+.seemore-title-box{
+    width: 100%;
+    text-align: center;
+}
+.seemore-title-box .seemore-title{
+    font-size: 35px;
+}
+.seemore-tovars{
+    width: 100%;
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(4, 20%);
+    grid-gap: 20px;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.seemore-tovars .tovar{
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    background: #fff !important;    
+    text-align: center;
+    border-radius: 7px;
+}

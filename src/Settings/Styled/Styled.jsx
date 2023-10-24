@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
     }
     body{
+        height: 200vh;
         margin: 0;
         padding: 0;
         background: #8080802b;

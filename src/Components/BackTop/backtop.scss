@@ -1,6 +1,7 @@
 .back-top{
     margin-top: 4rem;
     background: #232F3E;
+    margin-bottom: 0 ;
 }
 .backtop-btn{
     width: 100% ;
@@ -19,6 +20,10 @@
     display: grid;
     grid-template: repeat(1, auto) / repeat(4, 20%);
     justify-content: center;   
+    padding-bottom: 2rem;
+}
+.backtopLine{
+    border: 1px solid #dad7d718;
 }
 .backtop-inner .backtop-item .backtop-item-title{
     font-size: 17px;
@@ -49,7 +54,7 @@
     display: grid;
     grid-template: repeat(1, auto) / repeat(4, 10%);
     justify-content: center;
-    margin-top: 2rem;
+    padding: 1rem 0rem;
     align-items: center;
     grid-column-gap: 20px;
 }
@@ -63,14 +68,26 @@
     text-align: center;
     font-size: 0.8rem;
     border-radius: 3px;
+    background-size: 1.3rem !important;
+    background-position: calc(10%) !important;
+    background-repeat: no-repeat !important;
+    letter-spacing: 1px;
+    background: transparent;
 }
 .backtop-bottom-btn:nth-child(1){
     background-image: url("../../Settings/assets/images/BrowserLight.png");
-    background-size: 1.3rem;
-    background-position: calc(10%);
-    background-repeat: no-repeat;
+}
+.backtop-bottom-btn:nth-child(4){
+    background-image: url("../../Settings/assets/images/BrowserLight.png");
+   padding-left: 2rem;
 }
 .backtop-bottom-btn p {
     margin: 0;
     padding: 0;
+}
+.backtop-bottom-languages{
+    position: relative;
+}
+.languages-backTop-box{
+    width: 250px  !important;
 }
