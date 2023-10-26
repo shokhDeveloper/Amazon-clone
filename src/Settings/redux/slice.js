@@ -58,6 +58,8 @@ const initialState = {
     backTopLanguageBox: false,
     tovars: [],
     korzina: [],
+    allTovars: [],
+    likesTovars: getItem("amazon-likes-tovars") ? JSON.parse(getItem("amazon-likes-tovars")): []
 
 }
 export const slice = createSlice({
@@ -174,8 +176,36 @@ export const slice = createSlice({
         },
         setKorzina(state, action){
             state.korzina = action.payload
+        },
+        setAllTovars(state, action){
+            state.allTovars = action.payload
+        },
+        setLikeTovar(state, action){
+            if(action.payload.id === 0 || action.payload.id){
+                if(state.likesTovars.length){
+                    if(state.likesTovars.some(item => {
+                        if(item.id === action.payload.id && item.parentId === action.payload.parentId){
+                            return true
+                        }else{
+                            return false
+                        }
+                    })){
+                        state.likesTovars = state.likesTovars
+                    }else{
+                        state.likesTovars = [...state.likesTovars, action.payload]
+                        setItem("amazon-likes-tovars", state.likesTovars)
+                    }
+                }else{  
+                    state.likesTovars = [...state.likesTovars, action.payload]
+                    setItem("amazon-likes-tovars", state.likesTovars)
+                }
+            }
+        },
+        setLikeTakeDown(state, action ){
+            state.likesTovars = action.payload
+            setItem("amazon-likes-tovars", state.likesTovars)
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown} = slice.actions
 export const Reducer = slice.reducer

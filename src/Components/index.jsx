@@ -8,3 +8,4 @@ export * from "./Context";
 export * from "./RenderCard";
 export * from "./BackTop";
 export * from "./Footer";
+export * from "./Like";

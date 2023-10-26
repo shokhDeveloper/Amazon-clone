@@ -1,9 +1,9 @@
 import { RouterProvider } from "react-router";
-import { GlobalStyle, getItem, route, useFetching, useLoader } from "./Settings";
+import { ApiRequests, GlobalStyle, getItem, route, useFetching, useLoader } from "./Settings";
 import { Context, Loader } from "./Components";
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
+import { setAllTovars, setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next"
 i18n
@@ -107,7 +107,21 @@ function App() {
     window.addEventListener("click", handleClick)
     return () => window.removeEventListener("click", handleClick)
   },[])
-
+  useEffect(() => {
+    (async function(){
+      try{
+        const request = await  ApiRequests.getTovar("/tovars")
+        if(request.status === 200 || request.status === 304){
+          const response = await request.data
+          if(response?.length){
+            dispatch(setAllTovars(response))
+          }
+        }
+      }catch(error){
+        return error
+      }
+    }())
+  },[])
   return (
     <>
     {loader ? (
