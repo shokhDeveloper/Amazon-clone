@@ -4,8 +4,7 @@ import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTovars } from "../../Settings/redux/slice";
 import { v4 } from "uuid";
-import { Context, Like } from "../../Components";
-
+import { Context, Like, Tovar } from "../../Components";
 export const SeeMore = () => { 
   const {page,  limit, setLimit} = useContext(Context)
   const {tovars} = useSelector(({Reducer}) => Reducer)  
@@ -40,12 +39,7 @@ export const SeeMore = () => {
         <ul className="seemore-tovars">
           {tovars?.map((item) => {
             return (
-              <li className="tovar" key={item.id}>
-                <div className="tovar-header">
-                  <img src={item.img} alt="Amazon Image" />
-                  <Like parentId={item.parentId} id={item.id}/>
-                </div>
-              </li>
+              <Tovar item={item}/>
             );
           })}
         </ul>

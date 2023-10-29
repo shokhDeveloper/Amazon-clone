@@ -32,3 +32,16 @@ export const Button = styled.button`
         background: ${({styledtype}) => styledtype === "light" ? "#e3e0e0": ""};
     }
 `
+export const ShoppingBtn = styled.button.attrs({
+    type: "submit",
+    className: "shop border-transparent"  
+})`
+    background: #FCD200 ;
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.5rem 1rem;
+`

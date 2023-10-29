@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllTovars, setBottomIndex, setBtnActive, setSearchData } from "./Settings/redux/slice";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next"
+import axios from "axios";
 i18n
   .use(initReactI18next) 
   .init({
@@ -67,7 +68,7 @@ function App() {
   const {setLimit, setPage, page} = useContext(Context)
   const {openLoader} = useLoader()
   const {data} = useFetching("https://jsonplaceholder.typicode.com/users")
-  const {loader} = useSelector(({Reducer}) => Reducer )
+  const {loader, modalShopping} = useSelector(({Reducer}) => Reducer )
   const dispatch = useDispatch()
   useEffect(() => {
     if(loader){

@@ -23,8 +23,17 @@ body{
 }
 .seemore-tovars .tovar{
     border: 1px solid rgba(0, 0, 0, 0.26);
-    padding: 1rem;
+    // padding: 1rem;
     background: #fff !important;    
     text-align: center;
     border-radius: 7px;
+}
+.tovar .tovar-header{
+    position: relative;
+}
+.tovar .tovar-body{
+    padding: 1rem;
+}
+.tovar .tovar-footer{
+    position: relative;
 }

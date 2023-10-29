@@ -5,7 +5,7 @@ import {BiSolidUserCircle} from "react-icons/bi"
 import {FiShoppingCart} from "react-icons/fi"
 import {GrLocation} from "react-icons/gr"
 import { useDispatch, useSelector } from "react-redux";
-import { setFlag, setLanguageBox, setLocation, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
+import { setFlag, setLanguageBox, setLocation, setModalShopping, setSearchActive, setSearchFocus, setSearchValue, setSign } from "../../Settings/redux/slice";
 import { useEffect } from "react";
 import { SearchTodo } from "./SearchTodo";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,11 +17,12 @@ import { HeaderBottom } from "./HeaderBottom";
 import { ApiRequests } from "../../Settings";
 import AmericaFlag from "../../Settings/assets/images/America-Flag.png";
 import { LanguageBox } from "../LanguageBox";
+import { useCart } from "react-use-cart";
 export const Header = () => {
   const {currentApi, searchActive, searchFocus, languageBox, signBox, flag, token, user} = useSelector(({Reducer}) => Reducer)
   const navigate = useNavigate()
   const {t, i18n:{language}} = useTranslation()
-  const {getCountries} = ApiRequests
+  const {items} = useCart()
   const dispatch = useDispatch()
   const handleLocation = () => {
     navigator.geolocation.getCurrentPosition((api) => {
@@ -116,9 +117,11 @@ export const Header = () => {
           Prime
         </span>
       </div>
-      <div className="site-header-shoppingCart">
+      <div className="site-header-shoppingCart" onClick={() => {
+        dispatch(setModalShopping(true))
+      }}>
         <FiShoppingCart className="site-shoppingCart-icon"/>
-        <span className="site-shopping-count">0</span>
+        <span className="site-shopping-count">{items.length}</span>
       </div>
     </nav>
     </div>

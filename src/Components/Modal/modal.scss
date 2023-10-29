@@ -13,6 +13,7 @@
     width: 500px;
     background: #fff;
     border-radius: 10px;
+    
 }
 .modal-header{
     width: 100%;
@@ -37,4 +38,73 @@
 }
 .modal-body .sign-form output h3{
     margin: 1rem 0rem;
+}
+.shopping-tovar{
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+.shopping-tovar-info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background: #fff;
+}
+.shopping-tovar-info button{
+    margin-right: 1rem;
+}
+.modal-shopping{
+    width: 50% !important;
+    position: relative !important;
+}
+.shopping-tovar-check{
+    width: 50px;
+    height: 30px;
+    accent-color: yellow;
+}
+.shopping-tovars-lists{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.shopping-tovars-lists .shopping-tovar-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}
+.shopping-tovar-item .shopping-tovar-settings{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+    justify-content: space-around;
+}
+.shopping-tovar-settings .shopping-tovar-counts{
+    display: flex;
+    align-items: stretch;
+}
+.shopping-tovar-data{
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    text-align: center;
+    padding: 0.1rem 0rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.495);
+}
+.shopping-tovar-settings .shopping-tovar-counts{
+    background: rgba(128, 128, 128, 0.422);
+    border-radius: 30px;    
+}
+.shopping-tovar-settings .shopping-tovar-counts button{
+    background: transparent;
+    font-size: 20px;
+    padding: 0 1rem;
+}
+.tovar-active{
+    opacity: .7;
 }

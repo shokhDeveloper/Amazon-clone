@@ -59,8 +59,9 @@ const initialState = {
     tovars: [],
     korzina: [],
     allTovars: [],
-    likesTovars: getItem("amazon-likes-tovars") ? JSON.parse(getItem("amazon-likes-tovars")): []
-
+    likesTovars: getItem("amazon-likes-tovars") ? JSON.parse(getItem("amazon-likes-tovars")): [],
+    modalShopping: false,
+    tovarsPrice: 0
 }
 export const slice = createSlice({
     name: "uzum",
@@ -204,8 +205,17 @@ export const slice = createSlice({
         setLikeTakeDown(state, action ){
             state.likesTovars = action.payload
             setItem("amazon-likes-tovars", state.likesTovars)
+        },
+        setModalShopping(state, action){
+            state.modalShopping = action.payload
+        },
+        setTovarsPrice(state, action){
+            state.tovarsPrice += action.payload
+        },
+        setDefaultPrice(state, action){
+            state.tovarsPrice = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown, setModalShopping, setTovarsPrice, setDefaultPrice} = slice.actions
 export const Reducer = slice.reducer

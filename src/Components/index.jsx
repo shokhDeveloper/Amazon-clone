@@ -9,3 +9,5 @@ export * from "./RenderCard";
 export * from "./BackTop";
 export * from "./Footer";
 export * from "./Like";
+export * from "./Tovar";
+export * from "./Shopping";
