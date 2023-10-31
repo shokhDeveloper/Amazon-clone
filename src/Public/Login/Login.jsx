@@ -14,7 +14,7 @@ import { signInWithPopup } from "firebase/auth";
 import { GoogleProvider, auth } from "../../Settings/firebase/firebase.config";
 export const Login = () => {
   const date = new Date()
-  const {signHelp, token, errorTyping, googleUser, modalGooglePasswordLogin} = useSelector(({Reducer}) => Reducer)
+  const {signHelp, token, errorTyping, googleUser, modalGooglePasswordLogin, errorTypingText} = useSelector(({Reducer}) => Reducer)
   const {openLoader} = useLoader()
   const validationSchema = Yup.object().shape({
     email: Yup.string().test(
@@ -120,7 +120,7 @@ export const Login = () => {
               <output>
                 <h3>Sign in</h3>
               </output> 
-              <ErrorTyping type={errorTyping}/>
+              <ErrorTyping   type={errorTyping} text={errorTypingText} modal={false}/>
               <label htmlFor="email">
                 <p className={`${errors?.email || errorTyping  ? "error-text": "" }`}>{errors?.email? errors?.email?.message: "Email or phone number"}</p>
                 <Controller name="email" control={control} render={({field}) => (

@@ -1,156 +1,154 @@
 {
   "users": [
     {
-      "email": "shohijahonmusinkulov@gmail.com",
-      "password": "$2a$10$DtHuVKUQeyy5UktJ8h71P.5zLGIgF36RmoVIH73l/BNXMcPSf/2oe",
       "user_name": "Shohijahon Musinkulov",
-      "date": "19.10.2023, 00:32:34 Register At ",
+      "email": "shohijahonmusinkulov@gmail.com",
+      "password": "$2a$10$XSVBWT.qaNtIr/J7xBLUue9VCpY5F4uPQL8G3V.5mTprGm0VFpfG6",
+      "date": "31.10.2023, 22:06:03 Update profile data !",
       "id": 1
     }
   ],
   "posts": [],
-  "tovars": 
-    [
-      {
-        "img": "https://m.media-amazon.com/images/I/91Ldk5Qz9sL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 1,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91-Dqdv3a8L._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 2,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91ke43dIxkL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 3,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81Xy1ugiWeL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 4,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/71yNgTMEcpL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 5,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91n3r1cxBZL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 6,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/71pL+3nMzfL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 7,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91fRT+cJNzL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 8,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81bGKUa1e0L._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 9,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81QsMIHzUkL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 10,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91Ldk5Qz9sL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 11,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91-Dqdv3a8L._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 12,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91ke43dIxkL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 13,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81Xy1ugiWeL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 14,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/71yNgTMEcpL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 15,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91n3r1cxBZL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 16,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/71pL+3nMzfL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 17,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/91fRT+cJNzL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 18,
-        "title": "Book Animal",
-        "price": 1000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81bGKUa1e0L._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 19,
-        "title": "Book Man",
-        "price": 2000
-      },
-      {
-        "img": "https://m.media-amazon.com/images/I/81QsMIHzUkL._AC_SY200_.jpg",
-        "parentId": 0,
-        "id": 20,
-        "title": "Book Animal",
-        "price": 1000
-      }
-    ]
-    
+  "tovars": [
+    {
+      "img": "https://m.media-amazon.com/images/I/91Ldk5Qz9sL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 1,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91-Dqdv3a8L._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 2,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91ke43dIxkL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 3,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81Xy1ugiWeL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 4,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/71yNgTMEcpL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 5,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91n3r1cxBZL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 6,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/71pL+3nMzfL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 7,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91fRT+cJNzL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 8,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81bGKUa1e0L._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 9,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81QsMIHzUkL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 10,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91Ldk5Qz9sL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 11,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91-Dqdv3a8L._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 12,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91ke43dIxkL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 13,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81Xy1ugiWeL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 14,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/71yNgTMEcpL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 15,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91n3r1cxBZL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 16,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/71pL+3nMzfL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 17,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/91fRT+cJNzL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 18,
+      "title": "Book Animal",
+      "price": 1000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81bGKUa1e0L._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 19,
+      "title": "Book Man",
+      "price": 2000
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/81QsMIHzUkL._AC_SY200_.jpg",
+      "parentId": 0,
+      "id": 20,
+      "title": "Book Animal",
+      "price": 1000
+    }
+  ]
 }

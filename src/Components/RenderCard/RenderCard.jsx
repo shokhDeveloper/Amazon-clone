@@ -45,7 +45,7 @@ export const RenderCard = ({arr}) => {
                 <div className="card-footer">
                   <Link
                     className="card-link link-active"
-                    to={`${token ? "/see-more" : "login"}`}
+                    to={`${token ? "/see-more" : "/sign"}`}
                   >
                     {item.discription}
                   </Link>

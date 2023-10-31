@@ -3,7 +3,6 @@ import { getItem } from "../Utils";
 import { Home } from "../../Private";
 import { Sign } from "../../Public/Sign";
 import { Login, Register } from "../../Public";
-import { NotFound } from "../../Components/NotFound";
 const token = getItem("amazon-token")
 export const route = createBrowserRouter(
     createRoutesFromElements(

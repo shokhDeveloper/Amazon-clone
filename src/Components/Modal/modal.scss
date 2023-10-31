@@ -17,6 +17,7 @@
 }
 .modal-header{
     width: 100%;
+    
     text-align: center;
     position: relative;
 }
@@ -25,8 +26,7 @@
     top: 0;
     right: 0;
     font-size: 25px;
-    padding: 0;
-    background: #FCD200;
+    background: transparent;
     padding: 0 0.3rem;
 }
 .modal-header img{

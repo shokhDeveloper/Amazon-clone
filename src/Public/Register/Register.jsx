@@ -40,7 +40,7 @@ export const Register = () => {
       "Invalid Email or Phone number",
       (value) => {
         const emailRejex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const phoneRejex = /^\d{12}$/;
+        const phoneRejex = /^998(9[012345789]|6[125679]|7[01234569])[0-9]{7}$/;
         if (!emailRejex.test(value) && !phoneRejex.test(value)) {
           return false;
         } else {

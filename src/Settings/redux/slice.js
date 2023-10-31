@@ -64,7 +64,9 @@ const initialState = {
     tovarsPrice: 0,
     profile: [],
     profileType: false,
-    updateType: true
+    updateType: true,
+    errorUpdate: false,
+    errorUpdateText: "Siz password ma'lumotlaringizni yangilashingiz kerak yoki password dan boshqa narsani yangilamoqchi bolsangiz aks holda eski passwordingizni yozish tavfsiya etiladi !"
 }
 export const slice = createSlice({
     name: "uzum",
@@ -226,8 +228,11 @@ export const slice = createSlice({
         },
         setUpdateType(state, action){
             state.updateType = action.payload
+        },
+        setErrorUpdate(state, action){
+            state.errorUpdate = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown, setModalShopping, setTovarsPrice, setDefaultPrice, setProfile, setProfileType, setUpdateType} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown, setModalShopping, setTovarsPrice, setDefaultPrice, setProfile, setProfileType, setUpdateType, setErrorUpdate} = slice.actions
 export const Reducer = slice.reducer

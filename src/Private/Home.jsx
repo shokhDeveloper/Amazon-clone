@@ -7,7 +7,6 @@ import { Hero } from "./Hero";
 import { Additional } from "./Additional";
 import { Route, Routes } from "react-router";
 import { SeeMore } from "./SeeMore";
-import { NotFound } from "../Components/NotFound";
 import { Profile } from "../Settings";
 
 export const Home = () => {
@@ -45,8 +44,10 @@ export const Home = () => {
               }
             />
             <Route path="/see-more" element={<SeeMore/>}/>
-            <Route path="*" element={<NotFound/>}/>
-            <Route path="/profile-settings" element={<Profile/>}/>
+            <Route path="*" element={<BackTop/>}/>
+            {token && (
+              <Route path="/profile-settings" element={<Profile/>}/>
+            )}
           </Routes>
           {token && (
           <Modal type={"shopping"}  modal={modalShopping} setModal={setModalShopping}>
