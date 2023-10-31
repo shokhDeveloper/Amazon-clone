@@ -96,7 +96,7 @@ export const Header = () => {
         ): null}
       </div>
       ): (
-        <div className="site-nav-option user-option">
+        <div className="site-nav-option user-option" onClick={() => navigate("/profile-settings")}>
           <span className="user-data"><BiSolidUserCircle/> {user.user_name.split(" ")[0][0].toUpperCase()}.{user.user_name.split(" ")[1][0].toUpperCase()}</span>
         </div>
       )}

@@ -61,7 +61,10 @@ const initialState = {
     allTovars: [],
     likesTovars: getItem("amazon-likes-tovars") ? JSON.parse(getItem("amazon-likes-tovars")): [],
     modalShopping: false,
-    tovarsPrice: 0
+    tovarsPrice: 0,
+    profile: [],
+    profileType: false,
+    updateType: true
 }
 export const slice = createSlice({
     name: "uzum",
@@ -214,8 +217,17 @@ export const slice = createSlice({
         },
         setDefaultPrice(state, action){
             state.tovarsPrice = action.payload
+        },
+        setProfile(state, action){
+            state.profile = action.payload
+        },
+        setProfileType(state, action){
+            state.profileType = action.payload
+        },
+        setUpdateType(state, action){
+            state.updateType = action.payload
         }
     }
 })
-export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown, setModalShopping, setTovarsPrice, setDefaultPrice} = slice.actions
+export const {setToken, setUser, setOpenLoader, setCloseLoader, setLocation, setSearchActive, setSearchValue, setSearchData, setDeleteUser, setSearchFilter, setSearchFocus, setLanguageBox, setSign, setBottomIndex, setSideBar, setFlag, setSidebarActive, setNested, setNestedType, setNestedBack, setSidebarSelected, setImgCountDec, setImgCountInc, setBtnActive, setSignHelp, setGoogleUser, setGoogleUserNotPassword, setModalGooglePassword, setErrorTyping, setModalGooglePasswordLogin, setBackTopLanguageBox, setTovars, setAllTovars, setLikeTovar, setLikeTakeDown, setModalShopping, setTovarsPrice, setDefaultPrice, setProfile, setProfileType, setUpdateType} = slice.actions
 export const Reducer = slice.reducer

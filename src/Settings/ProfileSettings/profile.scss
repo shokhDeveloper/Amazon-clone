@@ -1,0 +1,15 @@
+.profile{
+    width: 100%;
+    min-height: 60vh;
+    border-bottom: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-inner{
+    width: 100%;
+    flex-basis: 100%;
+}
+.profile-inner  button{
+    width: 100% !important;
+}

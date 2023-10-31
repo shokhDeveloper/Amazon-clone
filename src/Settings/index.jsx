@@ -4,3 +4,4 @@ export * from "./Utils";
 export * from "./Styled";
 export * from "./Hooks";
 export * from "./ApiRequests";
+export * from "./ProfileSettings";

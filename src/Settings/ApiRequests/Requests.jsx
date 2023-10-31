@@ -23,5 +23,10 @@ export const ApiRequests = {
         return(
             axios.get(process.env.REACT_APP_SERVER + value)
         )
+    },
+    getProfile(id){
+        return(
+            axios.get(process.env.REACT_APP_SERVER + `/users/${id}` )
+        )
     }
 }
